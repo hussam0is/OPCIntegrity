@@ -17,5 +17,4 @@ export class AddEnvironmentComponent implements OnInit {
     this.http.post('addEnvironment',{
       name:this.environment_name}).toPromise().then(s=>console.log(s));
   }
-
 }

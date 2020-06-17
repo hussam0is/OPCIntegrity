@@ -3,8 +3,8 @@ const JH = require('./JenkinsHandling')
 const {getBuilds} = require('./builds')
 const {getJobs} = require('./jobs')
 const bodyParser = require('body-parser');
-const {update_environments, update_builds} = require('./DB_manging/sendToDB')
-const {get_existed_environments} = require('./DB_manging/getFromDB')
+const {update_environments, update_builds} = require('./DB_mangement_jenkins/sendToDB')
+const {get_existed_environments} = require('./DB_mangement_jenkins/getFromDB')
 const fetch = require('node-fetch');
 const log = console.log
 
