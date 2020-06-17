@@ -1,0 +1,92 @@
+<!-- <p>home works!</p>
+<!DOCTYPE html> -->
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container-fluid">
+    <form id="form" action="" method="GET">
+          <div >
+            <a></a>
+            <input id="back" value="Back" onclick="history.go(-1)">
+        </div>
+        <h1>Add New Test</h1>
+    <div class="bdy">
+      <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> Your test will be added to Tests Page.</p>
+      <div>
+        <br/>
+        <label for="enviName" >Fill in the data according to an old test ID:</label>
+        <input style="float:right; width: 90px;margin-top:-30px;" type="enviName" name="Category" id="enviName" onclick="value ='' "  value="Test ID">
+      <br/>
+      <br/>
+      <br/>
+    </div>
+    <div style="margin-bottom: 5px;">
+      <button id="tt" type="submit" name="go" style="margin-top:-40px;">Fill Test Details</button>
+    </div>
+        <div>
+            <br/>
+            <label for="enviName" >*Category</label>
+          <br/>
+          <input style="margin-bottom: 0px;" type="enviName" name="Category" id="enviName" [(ngModel)]="category">
+        </div>
+
+        <div >
+            <label for="enviName" >*Group:</label>
+            <br/>
+            <input style="margin-bottom: 0px;" type="enviName" name="Group" id="enviName" [(ngModel)]="group">
+        </div>
+          <div >
+            <label for="enviName" >*Test Case:</label>
+            <br/>
+            <input type="enviName" name="TestCase" id="enviName" [(ngModel)]="testCase">
+          </div>
+          <div >
+            <label for="enviName" >*Test Title:</label>
+            <br/>
+            <input type="enviName" name="TestTitle" id="enviName" [(ngModel)]="testTitle">
+          </div>
+          <div >
+            <label for="enviName"  >*Symbol:</label>
+            <br/>
+            <input type="file" name="file" id="enviName" [(ngModel)]="symbol">
+          </div>
+          <div>
+            <label for="enviName">Test Summary:</label>
+            <br>
+            <textarea style="margin-top: -45px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="testSummary"></textarea>
+        </div>
+        <br/>
+        <div>
+          <label for="enviName">Test Steps:</label>
+          <br>
+          <textarea style="margin-top: -50px;" for="enviName" name="TestSteps" rows="4" cols="30" [(ngModel)]="testSteps"></textarea>
+      </div>
+          <div>
+            <label for="enviName" >Test Data:</label>
+            <br/>
+            <textarea for="enviName" name="TestData" rows="4" cols="30" [(ngModel)]="testData"></textarea>
+          </div>
+          <div>
+            <label for="enviName" >*Expected Result:</label>
+            <br/>
+            <textarea for="enviName" name="ExpectedResult" rows="4" cols="30" [(ngModel)]="expectedResult"></textarea>
+          </div>
+          <div>
+            <label for="enviName" >Notes:</label>
+            <br/>
+            <textarea for="enviName" name="Notes" rows="4" cols="30" [(ngModel)]="notes"></textarea>
+          </div>
+          <div class="addBtn">
+            <input style="width: 400px;" type="submit" name="go" id="go" value="Add Test" (click)="addTest()">
+            </div>
+        </div>
+
+        <br>
+
+      </form>
+     </div>
+   </body>
+</html>

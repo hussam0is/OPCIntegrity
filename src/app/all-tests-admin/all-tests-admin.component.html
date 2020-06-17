@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<title>Integrity Management System</title>
+<body home>
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <img src="https://i.ibb.co/BwKS9b0/Logo-png.jpg" alt="Logo-png" border="0">
+        <li><a id="len1" class="hoverable" href="#" routerLink="/homeAdmin" >Home</a></li>
+        <li><a id="len2" class="hoverable" href="#" routerLink="/allTestAdmin" style="color:rgb(133, 195, 247);" >All Tests</a></li>
+        <li><a id="len3" class="hoverable" href="#" routerLink="/runBuildAdmin">Run Build</a></li>
+        <li><a id="len4" class="hoverable" href="#" routerLink="/viewReportsAdmin">Reports</a></li>
+        <li><a id="len5" class="hoverable" href="#" routerLink="/users">Manage Users</a></li>
+        <li><a id="len6" class="hoverable" href="#" routerLink="/managereports">Manage Reports</a></li>
+        <li><a id="len7" class="hoverable" href="#" routerLink="/deepAnalysis">Deep Analysis</a></li>
+      </ul>
+     </div>
+    </nav>
+  </div>
+
+<h1>All Tests</h1>
+<div class="row">
+  <br>
+  <div class="lbl">
+  <label>Search Test by:</label>
+  <select style="margin-left: 85px;" class="select-css" name="searchBy">
+    <option value="case">Test Case</option>
+    <option value="title">Test Title</option>
+    <option value="category">Category</option>
+    <option value="summary">Test Summary</option>
+    <option value="id">Test ID</option>
+    <option value="successRates">Success Rates</option>
+  </select>
+  <div id="excelFile">
+    <label style="margin-left:140px;">Upload excel tests file:</label>
+    <input type="file" name="file" id="file" class="inputfile" >
+  </div>
+</div>
+  <br>
+<div class="row">
+  <div style="float:left; padding-left:405px;">
+  <input id="txt" style="width: 150px;border:1px; margin-left:-10px;" type="text" onclick="value ='' "  value="Enter Search Word">
+</div>
+<button class="btt" id="txt" style=" width: 30px; margin-left:20px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+<input  class="btt" id="txt" style="width: 80px; margin-left:475px;" type="text" routerLink="/addTest" value="Add Test">
+</div>
+  <br>
+</div>
+<div>
+  <br>
+  <table  >
+      <thead >
+      <tr >
+        <th >Test ID</th>
+        <th >Test Case</th>
+        <th >Test Title</th>
+        <th >Category</th>
+        <th >Test Summary</th>
+        <th >Success Rates</th>
+        <th >Group</th>
+        <th >Notes</th>
+      </tr>
+      <tr id="row1" routerLink="/testDetails">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr id="row2" routerLink="/testDetails">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="row3" routerLink="/testDetails">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr id="row4" routerLink="/testDetails">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr id="row5" routerLink="/testDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr id="row6" routerLink="/testDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr id="row7" routerLink="/testDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr id="row8" routerLink="/testDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr id="row9" routerLink="/testDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr id="row10" routerLink="/testDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+      </thead>
+  </table>
+</div>
+
+  <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> Double-clicking on a test row will open edit option.</p>
+
+<br/>
+<br/>
+
+<div style="padding-right:30px; ">
+<br/>
+  <a href="#">
+    <span class="left"></span>
+  </a>
+  <a> <p class="page">Page 1</p></a>
+    <a  href="#">
+      <span class="right"></span>
+    </a>
+
+
+</div>
+</body>

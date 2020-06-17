@@ -1,0 +1,96 @@
+<!-- <p>home works!</p>
+<!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormConnect</title>
+    <link rel="stylesheet" href="style.css"> -->
+   <!--- <script defer src="OPCloud.ts"></script>-->
+</head>
+<body>
+  <div class="container-fluid">
+    <form id="form" action="" method="GET">
+
+          <div >
+            <a></a>
+            <input id="back" value="Back" onclick="history.go(-1)">
+        </div>
+        <h1>Test Details</h1>
+    <div class="bdy">
+        <div>
+            <br/>
+            <label for="enviName" >Test Id:</label>
+          <br/>
+          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName"  [(ngModel)]="testID">
+        </div>
+
+        <div >
+            <label for="enviName" >Category:</label>
+            <br/>
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName"  [(ngModel)]="category">
+        </div>
+          <div >
+            <label for="enviName" >Group:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="group">
+          </div>
+          <div >
+            <label for="enviName" >Test Case:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="testCase">
+          </div>
+          <div>
+            <label for="enviName" >Test Title:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="testTitle">
+          </div>
+          <div>
+            <label for="enviName" >Symbol:</label>
+            <img src="" alt="test symbol"  id="pic" [(ngModel)]="symbol">
+         <br/>
+          </div>
+          <div>
+            <label for="enviName" >Test Summary:</label>
+          <br/>
+          <textarea style="margin-top: -35px;" for="enviName" name="TestSummary" rows="4" cols="30"  [(ngModel)]="testSummary"></textarea>
+        </div>
+        <div>
+          <br/>
+          <label for="enviName" >Test Steps:</label>
+        <br/>
+        <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="testSteps"></textarea>
+      </div>
+      <div>
+        <br/>
+        <label for="enviName" >Test Data:</label>
+      <br/>
+      <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="testData"></textarea>
+    </div>
+    <div>
+      <br/>
+      <label for="enviName" >Expected Result:</label>
+    <br/>
+    <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="expectedResult"></textarea>
+  </div>
+  <div>
+    <br/>
+    <label for="enviName" >Notes:</label>
+  <br/>
+  <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="notes"></textarea>
+</div>
+          <div class="addBtn">
+            <input style="width: 190px;" type="submit" name="go"  routerLink="/testHistory" value="See Test History">
+            <input style="width: 190px; float:right;" type="submit" name="go"  value="Save Changes" (click)="editTest()" >
+            <br/>
+            <br/>
+            <input style="width: 400px; margin-top: 30px; color:red;" type="submit" name="go"  value="Delete Test" (click)="deleteTest()">
+            </div>
+        </div>
+
+        <br>
+
+      </form>
+     </div>
+   </body>
+</html>

@@ -1,0 +1,82 @@
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form id="form" action="" method="GET">
+
+            <div >
+              <a></a>
+              <input id="back" value="Back" onclick="history.go(-1)">
+          </div>
+          <h1>Manage Reports</h1>
+          <br/>
+      <div class="bdy">
+        <div>
+          <label for="ReportTitle" >Kind of Report:</label>
+          <br/>
+          <select id="Report" class="select-css" name="searchBy">
+              <option value="Build Run Summary"></option>
+              <option value="Integrity Status"></option>
+          </select>
+        </div>
+            <div>
+              <label for="ReportTitle" >Report Title:</label>
+              <br/>
+              <input type="ReportTitle" name="ReportTitle" id="Report">
+            </div>
+
+              <div>
+                <br/>
+                <label for="ReportTitle" styile="display: inline-block;" >Default Reporters:</label>
+                <label style="padding-left: 105px;">Search Build by:</label>
+                  <select id="SearchUserby"   >
+                    <option value="FirstName">First Name</option>
+                    <option value="LastName">Last Name</option>
+                    <option value="UserId">User ID</option>
+                    <option value="UserType">User Type</option>
+                  </select>
+                <div class="row">
+                  <br>
+                  <div>
+                    <button id="txt" style="padding: 5px 8px 5px 8px; width: 30px; margin-left: 25px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+                    <input id="txt" style="width: 207px; border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+                </div>
+            </div>
+          </div>
+          <br>
+        </div>
+        <div class="checker" >
+          <input type="checkbox" id="AllAdmins" name="AllAdmins" value="AllAdmins">
+          <label id="checkB"> All Admins</label>
+          <input type="checkbox" id="AllUsers" name="AllUsers" value="AllUsers">
+          <label id="checkB"> All Users</label>
+          <input type="checkbox" id="BuildRunner" name="BuildRunner" value="BuildRunner">
+          <label id="checkB"> Build Runner</label>
+        </div>
+              <div>
+          <select id="users" size="All" multiple>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="days">
+          <label class="timer">Send Report Every:</label>
+          <input type="ReportTimer" name="ReportTimer" id="ReportTimer">
+        </div>
+        <label id="timer1" >Days</label>
+        <br/>
+        <br/>
+        <div style="text-align:center; float:right;padding-right: 280px;">
+          <input id="txt" type="text" value="Save Report Kind" style="text-align:center;">
+        </div>
+        </form>
+     </div>
+    </body>
+  </html>

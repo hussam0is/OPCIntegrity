@@ -1,0 +1,67 @@
+<!-- <p>home works!</p>
+<!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormConnect</title>
+    <link rel="stylesheet" href="style.css"> -->
+   <!--- <script defer src="OPCloud.ts"></script>-->
+</head>
+<body>
+  <div class="container-fluid">
+    <form id="form" action="" method="GET">
+
+          <div >
+            <a></a>
+            <input id="back" value="Back" onclick="history.go(-1)">
+        </div>
+        <h1>Add New User</h1>
+    <div class="bdy">
+      <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> The user will be added to Users Page.</p>
+        <div>
+            <br/>
+            <label for="enviName" >User Id:</label>
+          <br/>
+          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName" [(ngModel)]="userId">
+        </div>
+
+        <div >
+            <label for="enviName" >*First Name:</label>
+            <br/>
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName" [(ngModel)]="firstName">
+        </div>
+          <div >
+            <label for="enviName" >*Last Name:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="lastName">
+          </div>
+          <div >
+            <label for="enviName" >*Email Address:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="email">
+          </div>
+          <div>
+            <label for="enviName" >*Password:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="password">
+          </div>
+          <div>
+            <label for="enviName" >*User Type:</label>
+            <br/>
+            <select style="margin-left: 85px;" id="enviName" class="select-css" name="searchBy" [(ngModel)]="userType">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+          </div>
+          <div class="addBtn">
+            <input style="width: 400px;" type="submit" name="go" id="go" value="Add User" (click)="addUser()">
+            </div>
+        </div>
+
+        <br>
+
+      </form>
+     </div>
+   </body>
+</html>

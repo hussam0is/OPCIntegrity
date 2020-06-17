@@ -1,0 +1,299 @@
+// @import "compass/css3";
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Arial, sans-serif";
+  color:rgb(133, 195, 247);
+  font-size:14px;
+  background-color: rgb(13, 76, 127);
+  //background:#333 url(/images/classy_fabric.png);
+  height: 600px;
+  padding-top:50px;
+}
+
+form {
+  background:rgb(13, 76, 127);
+  width:650px;
+  height: 500px;
+  margin: auto;
+  border-radius:0.4em;
+  border:1px solid #191919;
+  overflow:hidden;
+  position:relative;
+  padding:20px;
+  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+}
+
+form:after {
+  content:"";
+  display:block;
+  position:absolute;
+  height:1px;
+  width:100px;
+  left:20%;
+  background:linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
+  top:0;
+}
+
+form:before {
+   content:"";
+  display:block;
+  position:absolute;
+  width:8px;
+  height:5px;
+  border-radius:50%;
+  left:34%;
+  top:-7px;
+  box-shadow: 0 0 6px 4px #fff;
+}
+
+
+
+form h1 {
+  position: relative;;
+  font-size: 35px;
+  font-family:  Arial, sans-serif;
+  color: rgb(133, 195, 247);
+  font-weight: bold;
+  font-variant: inherit;
+  font-display: inherit;
+  text-align: center;
+}
+
+form a:after {
+   content:"";
+  display:block;
+  width:450px;
+  height:100px;
+  position:absolute;
+  top:0;
+  left:130px;
+  pointer-events:none;
+  transform:rotate(30deg);
+  background:linear-gradient(200deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+}
+img{
+  height: 90px;
+  width: 300px;
+  text-align: center;
+}
+label {
+   color:rgb(0, 0, 0);
+  display: table-cell;
+  font-weight: bold;
+  padding-bottom:6px;
+  font-family:  Arial, sans-serif;
+  //float:left;
+  text-align: left;
+  margin-top: 15px;
+  //vertical-align: left;
+}
+.select-css {
+  //display: table-cell;
+  //vertical-align: right;
+  width: 260px;
+  font-size: 15px;
+  font-family:  Arial, sans-serif;
+font-weight: 700;
+color: rgb(0, 0, 0);
+padding:5px 5px;
+/* max-width: 100%; */
+//box-sizing: border-box;
+margin-left: 100px;
+border:1px solid rgba(0,0,0,0.4);
+box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+border-radius: .5em;
+//-moz-appearance: none;
+//-webkit-appearance: none;
+appearance: none;
+text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+ linear-gradient(to bottom, white, rgb(133, 195, 247) 100%);
+background-repeat: no-repeat;
+background-position: right .7em top 50%, 0 0;
+background-size: .65em auto, 100%;
+font-family:  Arial, sans-serif;
+float:right;
+font-weight:bold;
+resize: none;
+font-size:15px;
+}
+.select-css:hover {
+border-color: #888;
+}
+.select-css option {
+font-weight:normal;
+}
+.bdy{
+  padding-left: 100px;
+  padding-right: 110px;
+  //padding-bottom: 50px;
+  }
+#enviName{
+  //text-align: left;
+  font-family:  Arial, sans-serif;
+  float:right;
+  font-weight:bold;
+  resize: none;
+  font-size:15px;
+  position: auto;
+  margin-top: -46px;
+}
+input[type=text],
+input[type=enviName] {
+   width: 260px;
+  padding:6px 5px;
+  background:linear-gradient(white, rgb(133, 195, 247) 100%);
+  border:1px solid rgba(0,0,0,0.4);
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .5em;
+  //margin-bottom:0px;
+  //margin-top: 10px;
+  margin-left: 25px;
+}
+
+
+
+label[for=remember]{
+  color:white;
+  display:inline-block;
+  padding-bottom:0;
+  padding-top:2px;
+}
+
+input[type=checkbox] {
+  display:inline-block;
+  vertical-align:top;
+}
+
+.p-container {
+   padding:8px 20px 20px 10px;
+}
+
+.memmberMe {
+   margin-right: 18px;
+}
+.fs{
+  padding-top: 50px;
+}
+div{
+  padding-top: 0;
+  margin: 0;
+}
+.p-container:after {
+   clear:both;
+  display:table;
+  content:"";
+}
+
+.p-container span {
+  display:block;
+  float:left;
+  color:#ffffff;
+  padding-top:8px;
+  padding-left: 0%;
+}
+
+
+input[id=back]{
+
+  border:1px solid rgb(133, 195, 247);
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  box-shadow:
+  inset 0 1px 0 rgba(255,255,255,0.3),
+  inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius:1em;
+  background:rgb(13, 76, 127);
+  background:linear-gradient(white, rgb(133, 195, 247));
+  border:2px solid #222;
+  color:rgb(0, 0, 0);
+  float:left;
+  font-weight:bold;
+  cursor:pointer;
+  font-size: 10px;
+  width: 33px;
+  height: 30px;
+
+}
+input[type=submit] {
+   padding:5px 20px;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  box-shadow:
+  inset 0 1px 0 rgba(255,255,255,0.3),
+  inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius: .5em;
+  background:rgb(13, 76, 127);
+  background:linear-gradient(white, rgb(133, 195, 247));
+  border:2px solid #222;
+  color:rgb(0, 0, 0);
+  float:left;
+  font-weight:bold;
+  cursor:pointer;
+  font-size: 14px;
+  width: 335px;
+  height: 33px;
+}
+a.btn{
+ //padding:5px 20px;
+ border:1px solid rgba(0,0,0,0.4);
+ text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+ box-shadow:
+ inset 0 1px 0 rgba(255,255,255,0.3),
+ inset 0 10px 10px rgba(255,255,255,0.1);
+ border-radius:0.3em;
+ background:#0184ff;
+ color:white;
+ float:right;
+ font-weight:bold;
+ cursor:pointer;
+ font-size:13px;
+}
+
+input[type=submit]:hover {
+  box-shadow:
+  inset 0 1px 0 rgba(0, 0, 0, 0.3),
+  inset 0 -10px 10px #a2a6d1;
+}
+input[id=back]:hover {
+  box-shadow:
+  inset 0 1px 0 rgba(255,255,255,0.3),
+  inset 0 -10px 10px rgba(255,255,255,0.1);
+}
+input[id=enviName]:hover {
+  box-shadow:
+  inset 0 1px 0 rgba(255,255,255,0.3),
+  inset 0 -10px 10px rgba(255,255,255,0.1);
+}
+select[id=enviName]:hover {
+  box-shadow:
+  inset 0 1px 0 rgba(255,255,255,0.3),
+  inset 0 -10px 10px rgba(255,255,255,0.1);
+}
+
+input[type=text]:hover,
+select[id=enviName]:hover,
+input[type=enviName]:hover,
+label:hover ~ input[type=text],
+label:hover ~ input[type=enviName] {
+   background:#a2a6d1;
+}
+
+input[type=text]:hover {
+  background:#4511a7;
+  box-shadow:
+  inset 0 1px 0 rgba(0, 0, 0, 0.1),
+  inset 0 -10px 10px rgba(0, 0, 0, 0.1);
+}
+.note{
+  font-size: 15px;
+  font-family:  Arial, sans-serif;
+  margin-right: 60px;
+  color:black;
+  font-weight: bold;
+}
+.addBtn {
+  //padding-left: 85px;
+  padding-top: 10px;
+  width: 50px;
+}

@@ -1,0 +1,64 @@
+<!-- <p>home works!</p>
+<!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormConnect</title>
+    <link rel="stylesheet" href="style.css"> -->
+   <!--- <script defer src="OPCloud.ts"></script>-->
+</head>
+<body>
+  <div class="container-fluid">
+    <form id="form" action="" method="GET">
+
+          <div >
+            <a></a>
+            <input id="back" value="Back" onclick="history.go(-1)">
+        </div>
+        <h1>User Details</h1>
+    <div class="bdy">
+        <div>
+            <br/>
+            <label for="enviName" >User Id:</label>
+          <br/>
+          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName" [(ngModel)]="userId">
+        </div>
+
+        <div >
+            <label for="enviName" >First Name:</label>
+            <br/>
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName" [(ngModel)]="firstName">
+        </div>
+          <div >
+            <label for="enviName" >Last Name:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="lastName">
+          </div>
+          <div >
+            <label for="enviName" >Email Address:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="email">
+          </div>
+          <div>
+            <label for="enviName" >Password:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="password">
+          </div>
+          <div>
+            <label for="enviName" >User Type:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="userType">
+          </div>
+          <div class="addBtn">
+            <input style="width: 150px;" type="submit" name="go"  value="Save Changes" (click)="editUser()">
+            <input style="width: 150px; float:right; color:red;" type="submit" name="go"  value="Delete User" (click)="deleteUser()">
+            </div>
+        </div>
+
+        <br>
+
+      </form>
+     </div>
+   </body>
+</html>

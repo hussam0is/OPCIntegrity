@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<title>Integrity Management System</title>
+<body home>
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <img src="https://i.ibb.co/BwKS9b0/Logo-png.jpg" alt="Logo-png" border="0">
+        <li><a id="len1" class="hoverable" href="#" routerLink="/homeAdmin" >Home</a></li>
+        <li><a id="len2" class="hoverable" href="#" routerLink="/allTestsAdmin">All Tests</a></li>
+        <li><a id="len3" class="hoverable" href="#" routerLink="/runBuildAdmin">Run Build</a></li>
+        <li><a id="len4" class="hoverable" href="#" routerLink="/viewReportsAdmin">Reports</a></li>
+        <li><a id="len5" class="hoverable" href="#" routerLink="/users" style="color:rgb(133, 195, 247);">Manage Users</a></li>
+        <li><a id="len6" class="hoverable" href="#" routerLink="/managereports">Manage Reports</a></li>
+        <li><a id="len7" class="hoverable" href="#" routerLink="/deepAnalysis">Deep Analysis</a></li>
+      </ul>
+     </div>
+    </nav>
+  </div>
+
+<h1>Manage Users</h1>
+<div class="row">
+  <br>
+  <div class="lbl">
+  <label>Current Environment:</label>
+  <select style="margin-left: 50px;" class="select-css" name="environment">
+      <option value="trunk"></option>
+      <option value="client"></option>
+      <option value="trail"></option>
+  </select>
+</div>
+  <br>
+  <div class="lbl">
+  <label>Search User by:</label>
+  <select style="margin-left: 90px;" class="select-css" name="searchBy">
+    <option value="userId">User Id</option>
+    <option value="firstName">First Name</option>
+    <option value="lastName">Last Name</option>
+    <option value="email">Email Address</option>
+    <option value="userType">User Type</option>
+  </select>
+</div>
+  <br>
+<div class="row">
+  <div style="float:left; padding-left:485px;">
+  <input id="txt" style="width: 150px; border:1px;" type="text" onclick="value ='' "  value="Enter Search Word">
+</div>
+<button id="txt" style="width: 30px; margin-right: 240px;" type="submit" onclick="searchUserby()" ><i class="fa fa-search"></i></button>
+<div style="float:right;padding-right: 280px;">
+  <input id="txt" style="width: 120px;" type="text" routerLink="/addUser" value="Add New User">
+</div>
+</div>
+  <br>
+</div>
+<div>
+  <br>
+  <table  >
+      <thead >
+      <tr >
+          <th>User ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Password</th>
+          <th>User Type</th>
+      </tr>
+      <tr id="row1" routerLink="/userDetails">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+      </tr>
+      <tr id="row2" routerLink="/userDetails">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr id="row3" routerLink="/userDetails">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+  </tr>
+  <tr id="row4" routerLink="/userDetails">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+</tr>
+<tr id="row5" routerLink="/userDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row6" routerLink="/userDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row7" routerLink="/userDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row8" routerLink="/userDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row9" routerLink="/userDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row10" routerLink="/userDetails">
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+      </thead>
+  </table>
+</div>
+<p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> Double-clicking on a user row will open user details</p>
+
+<div>
+
+  <a href="#">
+    <span class="left"></span>
+  </a>
+  <a> <p class="page">Page 1</p></a>
+    <a  href="#">
+      <span class="right"></span>
+    </a>
+
+
+</div>
+</body>

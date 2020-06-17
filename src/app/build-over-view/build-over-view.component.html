@@ -1,0 +1,172 @@
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form id="form" action="" method="GET">
+
+            <div >
+              <a></a>
+              <input id="back" value="Back" onclick="history.go(-1)">
+          </div>
+          <h1>Build Overview</h1>
+          <br/>
+      <div class="bdy">
+        <div>
+          <label for="ReportTitle" >Running environment:</label>
+          <br/>
+          <select id="Report" class="select-css" name="searchBy">
+              <option value=""></option>
+          </select>
+        </div>
+            <div>
+              <label for="ReportTitle" >Report To:</label>
+              <br/>
+              <select id="Report" class="select-css" name="searchBy">
+                <option value="First Name">First Name</option>
+                <option value="Last Name">Last Name</option>
+                <option value="Email Address">Email Address</option>
+                <option value="User Type">User Type</option>
+            </select>
+            </div>
+              <div>
+                <div class="row">
+                  <div>
+                    <button id="txt" style="padding: 5px 8px 5px 8px; width: 30px; margin-left: 25px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+                    <input id="txt" style="width: 207px; border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+                </div>
+            </div>
+          </div>
+          <br>
+        </div>
+  <br/>
+              <div>
+          <select id="users" size="All" multiple>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <label style="padding-left:90px;" for="enviName" >The following tests will be run in this build:</label>
+        <table  >
+            <thead >
+            <tr>
+                <th>Test ID</th>
+                <th>Test Case</th>
+                <th>Test Title</th>
+                <th>Category</th>
+                <th>Test Summary</th>
+                <th>Group</th>
+              </tr>
+            <tr id="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row2">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row3">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row4">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row5">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row6">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row7">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row8">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row9">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row10">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+    </table>
+  </div>
+
+  <div class="arrwos">
+    <a href="#">
+      <span class="left"></span>
+    </a>
+    <a> <p class="page">Page 1</p></a>
+      <a  href="#">
+        <span class="right"></span>
+      </a>
+  </div>
+  <br/>
+        <div style="text-align:center; float:right;padding-right: 280px;">
+          <input id="txt" type="text" value="Accept and Run" style="color:green; text-align: center;"  (click)="runBuild()">
+        </div>
+        </form>
+     </div>
+    </body>
+  </html>

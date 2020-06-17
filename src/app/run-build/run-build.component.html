@@ -1,0 +1,187 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<title>Integrity Management System</title>
+<body home>
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <img src="https://i.ibb.co/BwKS9b0/Logo-png.jpg" alt="Logo-png" border="0">
+        <li><a id="len1" class="hoverable" href="#" routerLink="/home" >Home</a></li>
+        <li><a id="len2" class="hoverable" href="#" routerLink="/allTest">All Tests</a></li>
+        <li><a id="len3" class="hoverable" href="#" routerLink="/runBuild" style="color:rgb(133, 195, 247);">Run Build</a></li>
+        <li><a id="len4" class="hoverable" href="#" routerLink="/viewReports">Reports</a></li>
+      </ul>
+     </div>
+    </nav>
+  </div>
+
+<h1>Build Runner</h1>
+<div class="row">
+  <br>
+  <div class="lbl">
+  <label>Choose group number:</label>
+  <select style="margin-left: 60px;" class="select-css" name="environment">
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+  </select>
+</div>
+<br/>
+<div class="lbl">
+  <label>Search by build number:</label>
+  <select style="margin-left: 50px;" class="select-css" name="environment">
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+  </select>
+  <br/>
+  <br/>
+  <button id="txt" style="width: 150px; margin-left: 225px;" type="submit" onclick="searchBuildby()" >Show Build Tests</button>
+</div>
+  <br>
+  <div class="lbl">
+  <label>Search Test by:</label>
+  <select style="margin-left: 115px;" class="select-css" name="searchBy">
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+  </select>
+</div>
+  <br>
+<div class="row">
+  <div style="float:left; padding-left:505px;">
+  <input id="txt" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+</div>
+<button id="txt" style="width: 30px; margin-right: 625px; margin-top:-3px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+</div>
+<div >
+  <br/>
+  <input id="bttns" style="margin-left:130px; " type="text" value="Select all">
+  <input id="bttns" style="margin-left:-70px;" type="text" value="Unselect all">
+  <input id="bttns" style=" margin-left:240px;color:rgb(7, 153, 2);" routerLink="/buildOverView" type="text" value="Run Build">
+  <input id="bttns" style=" margin-left:-70px; color:red;" type="text" routerLink="/buildStop" value="Stop running">
+</div>
+</div>
+<div>
+  <br>
+  <table  >
+      <thead >
+      <tr >
+          <th>Build ID</th>
+          <th>Group</th>
+          <th>Status</th>
+          <th>Result (successful tests out of all tests)</th>
+          <th>Date</th>
+          <th>Start Time</th>
+      </tr>
+      <tr id="row1">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+      </tr>
+      <tr id="row2" >
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    <tr id="row3" >
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+  </tr>
+  <tr id="row4" >
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+</tr>
+<tr id="row5" >
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row6" >
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row7" >
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row8" >
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row9" >
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+<tr id="row10" >
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+
+</tr>
+      </thead>
+  </table>
+</div>
+<p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> clicking on a test will select it. Another click will make it unselected.</p>
+
+<div>
+
+  <a href="#">
+    <span class="left"></span>
+  </a>
+  <a> <p class="page">Page 1</p></a>
+    <a  href="#">
+      <span class="right"></span>
+    </a>
+
+
+</div>
+</body>
