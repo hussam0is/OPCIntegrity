@@ -1,15 +1,63 @@
+
+<html lang="en">
 <head>
-  <title>Report Details</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
-  <div >
-      <input type="button" value="Go Back" onclick="history.go(-1)">
+  <div class="container-fluid">
+    <form id="form" action="" method="GET">
+
+          <div >
+            <a></a>
+            <input id="back" value="Back" onclick="history.go(-1)">
+        </div>
+        <h1>Report Details</h1>
+        <br/>
+    <div class="bdy">
+      <div>
+        <label for="ReportTitle" >ID:</label>
+        <br/>
+        <input type="enviName" name="enviName" id="enviName">
+      </div>
+          <div>
+            <label  >Kind:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div>
+            <label  >Title:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+        <br>
+        <div>
+          <label  >Reported To:</label>
+    <select id="users" size="All" multiple>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+  </div>              
+
+  <div>
+    <br/>
+    <br/>
+    <br/>
+    <label  >Date:</label>
+    <br/>
+    <input type="enviName" name="enviName" id="enviName">
   </div>
-  <h1>Report Details</h1>
-  <br><br>
-  <label>ID</label><br><br>
-  <label>Kind</label><br><br>
-  <label>Title</label><br><br>
-  <label>Reported to</label><br><br>
-  <label>Date</label><br><br>
-  <label>Content</label><br><br>
+  <div>
+    <br/>
+    <label  >Content:</label>
+    <br/>
+    <textarea style="" for="content" name="content" rows="12" cols="50"></textarea> 
+   </div>
+      </div> 
+      </form>
+   </div>
+  </body>
+</html>

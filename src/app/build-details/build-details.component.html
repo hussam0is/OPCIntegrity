@@ -1,40 +1,180 @@
+<!-- <p>home works!</p>
+<!DOCTYPE html> -->
+<html lang="en">
 <head>
-  <title>Build Details</title>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormConnect</title>
+    <link rel="stylesheet" href="style.css"> -->
+   <!--- <script defer src="OPCloud.ts"></script>-->
 </head>
 <body>
-  <div >
-      <input type="button" value="Go Back" onclick="history.go(-1)">
+  <div class="container-fluid">
+    <form id="form" action="" method="GET">
+
+          <div >
+            <a></a>
+            <input id="back" value="Back" onclick="history.go(-1)">
+        </div>
+        <h1>Build Details</h1>
+    <div class="bdy">
+        <div>
+            <br/>
+            <label for="enviName" >Build Id:</label>
+          <br/>
+          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName">
+        </div>
+        
+        <div >
+            <label for="enviName" >Jenkins Job Number:</label>
+            <br/>
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName">
+        </div>
+          <div >
+            <label for="enviName" >Status:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div >
+            <label for="enviName" >Result:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div>
+            <label for="enviName" >Environment:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div >
+            <label for="enviName" >Group:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div>
+            <label for="enviName" >Date:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div>
+            <label for="enviName" >Start Time:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div>
+            <label for="enviName" >Run Duration:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+          <div>
+            <label for="enviName" >Reported To:</label>
+            <br/>
+            <select style="margin-left: 85px;" id="enviName" class="select-css" name="searchBy">
+                <option value=""></option>
+            </select>
+          </div>
+          <div>
+            <label for="enviName" >Zoho Issue Link:</label>
+            <br/>
+            <input type="enviName" name="enviName" id="enviName">
+          </div>
+        </div>
+
+        <br>
+        <div>
+            <label style="padding-left:60px;" for="enviName" >Build consists of the following tests:</label>
+        <table  >
+            <thead >
+            <tr>
+                <th>Test ID</th>
+                <th>Test Case</th>
+                <th>Test Title</th>
+                <th>Category</th>
+                <th>Test Result</th>
+            </tr>
+            <tr id="row1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row2">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row3">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row4">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row5">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row6">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row7">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row8">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row9">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+            <tr id="row10">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>              
+            </tr>
+        </thead>
+    </table>
   </div>
-  <h1>Build Details</h1>
-  <br><br>
-  <label>Build ID</label><br><br>
-  <label>Status</label><br><br>
-  <label>Result</label><br><br>
-  <label>Running Environment</label><br><br>
-  <label>Date</label><br><br>
-  <label>Start Time</label><br><br>
-  <label>Run Duration</label><br><br>
-  <label>Reported to</label><br><br>
-  <label>Zoho issue link: (if needed)</label><br>
-  <br>
-  <table class="table-fill">
-      <thead>
-      <tr>
-      <th class="text-left">Test ID</th>
-      <th class="text-left">Test Case</th>
-      <th class="text-left">Test Title</th>
-      <th class="text-left">Category</th>
-      <th class="text-left">Test Result</th>
-      </tr>
-      </thead>
-      <tbody class="table-hover">
-      <tr>
-      <td class="text-left">1</td>
-      <td class="text-left">#ACL1</td>
-      <td class="text-left">Objext1-Object2</td>
-      <td class="text-left">Integration test</td>
-      <td class="text-left">Faild</td>
-      </tr>
-      </tbody>
-      </table>
-      </body>
+  
+<div class="arrwos">
+    <a href="#">
+      <span class="left"></span>
+    </a>
+    <a> <p class="page">Page 1</p></a>
+      <a  href="#">
+        <span class="right"></span>
+      </a>
+  </div>
+      </form>
+     </div>
+   </body>
+</html>
