@@ -214,7 +214,7 @@ input[id=back]{
   font-size: 10px;
   width: 33px;
   height: 30px;
-
+  
 }
 input[type=submit] {
    padding:5px 20px;
@@ -289,7 +289,7 @@ input[type=text]:hover {
 table {
   margin-left:auto;
   margin-right:auto;
-  border-collapse:separate;
+  border-collapse:separate;  
 
 }
 
@@ -428,7 +428,7 @@ a:hover .left:after, a:hover .top:after, a:hover .bottom:after, a:hover .right:a
   text-align:center !important;
   background-color: rgb(13, 76, 127);
   font-weight:600;
-
+  
 }
 .left {
   display: inline-block;
