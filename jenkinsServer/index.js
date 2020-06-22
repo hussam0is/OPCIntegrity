@@ -12,7 +12,6 @@ const isDebug = true;
 const log = (str) => {
     if (isDebug) console.log(str)
 }
-
 async function main() {
     const app = express()
     const PORT = process.env.PORT || 5000
@@ -28,38 +27,10 @@ async function main() {
     })*/
     //environment:
     //await update_environments()
-    await update_builds()
+    //JH.get_ALl_jobs().then(jobs=>log(jobs))
+    //await JH.createJob('TestCreatJobFun-2')
 
 
-    /*const env = envs.find((value, index, array) => {
-        return value.localeCompare(envForTest)
-    })*/
-    //console.log(env)
-
-
-    //await update_builds()
-    //const builds = await getBuilds();
-    // const url = 'http://localhost:5000/build';
-    // for(let build in builds){
-    //     if(builds.hasOwnProperty(build)){
-    //         fetch(url, {
-    //             method: 'POST',
-    //             body: JSON.stringify(builds[build]),
-    //             headers: {'Content-Type': 'application/json'},
-    //         }).then(res => res.json()) // expecting a json response
-    //             .then(json => {
-    //                 if (json.error === true) {
-    //                     log('Error: ' + json.message)
-    //                 }
-    //                 else{log("build added successfully")}
-    //             }).catch(err => log(err));
-    //     }
-    //     else{
-    //         log('No builds found in array builds in sendTODB.js')
-    //     }
-    // }
-    // const buildInfo =await JH.buildInfo(jobs[1].environment_name, 108)
-    //log(buildInfo)
     app.listen(PORT, () => log('server started on port', PORT))
 }
 

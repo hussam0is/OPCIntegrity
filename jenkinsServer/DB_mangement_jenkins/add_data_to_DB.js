@@ -1,10 +1,12 @@
 const fetch = require('node-fetch');
+const JH = require('../JenkinsHandling')
 
 const isDebug = false;
 const log = (str) => {
     if (isDebug) console.log(str)
 }
-// NOT JENKINS RELATED:
+
+// NOT JENKINS RELATED AT 100%:
 // (1) Adding environment to the database.
 const addEnvironmentToDB = async (Env_name) => {
     const url = 'http://localhost:5000/environment';
@@ -22,6 +24,7 @@ const addEnvironmentToDB = async (Env_name) => {
                     console.log('Error in function addEnvironmentToDB: ' + json.message)
                 }
             } else {
+                JH.createJob(Env_name)
                 console.log(json.message)
             }
         }).catch(err => {

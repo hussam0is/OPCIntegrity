@@ -40,7 +40,8 @@ exports.get_builds_and_tests = function (jobName) {
         console.log(err)
     });
 }
-exports.get_ALl_jobs = function () {
+
+function get_ALl_jobs() {
     return new Promise((resolve, reject) => {
         jenkinsUser1.info(function (err, data) {
             if (err) {
@@ -53,7 +54,9 @@ exports.get_ALl_jobs = function () {
             }
         })
     })
-};
+}
+
+exports.get_ALl_jobs = get_ALl_jobs
 
 exports.getConsoleOutput = function (jobName, buildNumber) {
     return new Promise((resolve, reject) => {
@@ -101,18 +104,66 @@ exports.buildInfo = function (jobName, buildId) {
             }
             resolve(data)
         })
-    }).catch(err => console.log('ERR: ',err))
+    }).catch(err => console.log('ERR: ', err))
 }
 
 exports.deleteBuild = function (jobName, buildId) {
     return new Promise((resolve, reject) => {
-        jenkinsUser2.delete_build(jobName, buildId,function (err, data) {
-            if (err){
-                console.log("Failed to delete build number: "+buildId+", in job: "+jobName)
+        jenkinsUser2.delete_build(jobName, buildId, function (err, data) {
+            if (err) {
+                console.log("Failed to delete build number: " + buildId + ", in job: " + jobName)
                 return reject(err)
             }
-            console.log("Successfully deleted build number: "+buildId+", in job: "+jobName)
+            console.log("Successfully deleted build number: " + buildId + ", in job: " + jobName)
             resolve(data)
         })
-    }).catch(err=> console.log(err))
+    }).catch(err => console.log(err))
+}
+exports.createJob = async function (jobName) {
+    const jobsInJenkins = await get_ALl_jobs()
+    const xmlConfigString = '<?xml version=\'1.1\' encoding=\'UTF-8\'?>\n' +
+        '<project>\n' +
+        '  <keepDependencies>false</keepDependencies>\n' +
+        '  <properties/>\n' +
+        '  <scm class="hudson.scm.NullSCM"/>\n' +
+        '  <canRoam>false</canRoam>\n' +
+        '  <disabled>false</disabled>\n' +
+        '  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>\n' +
+        '  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>\n' +
+        '  <triggers/>\n' +
+        '  <concurrentBuild>false</concurrentBuild>\n' +
+        '  <builders/>\n' +
+        '  <publishers/>\n' +
+        '  <buildWrappers/>\n' +
+        '</project>';
+    return new Promise((resolve, reject) => {
+        jenkinsUser2.create_job(jobName, xmlConfigString, function (err, data) {
+            for (let job in jobsInJenkins) {
+                if (jobsInJenkins[job].environment_name.localeCompare(jobName) === 0) {
+                    console.log('Jenkins has another job with the same name ' + jobName)
+                    return
+                }
+            }
+            if (err) {
+                if (jobName)
+                    return console.log(err);
+            }
+            console.log('Environment -' + jobName + '- has been added to jenkins successfully:')
+            resolve(data)
+        });
+    }).catch(err => {
+        console.log('Error in function -createJob()- :' + err)
+
+    })
+}
+exports.stopBuild = async function (jobName, buildId) {
+    return new Promise((resolve, reject) => {
+        jenkinsUser2.stop_build(jobName, buildId, function (err, data) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log('Stopped running build #' + buildId + ' in job -' + jobName + '-')
+            console.log(data)
+        })
+    }).catch(err => console.log(err));
 }

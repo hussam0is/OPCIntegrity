@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 
+
 const isDebug = false;
 const log = (str) => {
     if (isDebug) console.log(str)
