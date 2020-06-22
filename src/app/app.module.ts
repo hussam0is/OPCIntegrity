@@ -30,6 +30,8 @@ import { ViewReportsAdminComponent } from './view-reports-admin/view-reports-adm
 import { RunBuildAdminComponent } from './run-build-admin/run-build-admin.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AllTestsAdminComponent } from './all-tests-admin/all-tests-admin.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { AllTestsAdminComponent } from './all-tests-admin/all-tests-admin.compon
     HttpClientModule,
     // HttpClient,
     BrowserModule,
+    NgApexchartsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
