@@ -4,7 +4,6 @@ const isDebug = false;
 const log = (str) => {
     if (isDebug) console.log(str)
 }
-
 // NOT JENKINS RELATED:
 // (1) Adding environment to the database.
 const addEnvironmentToDB = async (Env_name) => {
