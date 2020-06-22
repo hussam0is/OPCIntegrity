@@ -3,14 +3,18 @@ const JH = require('./JenkinsHandling')
 const {getBuilds} = require('./builds')
 const {getJobs} = require('./jobs')
 const bodyParser = require('body-parser');
-const {update_environments, update_builds} = require('./DB_mangement_jenkins/sendToDB')
-const {get_existed_environments} = require('./DB_mangement_jenkins/getFromDB')
+const {update_environments, update_builds} = require('./DB_mangement_jenkins/update_DB_data')
+const {get_existed_environments} = require('./DB_mangement_jenkins/get_data')
+const {addEnvironmentToDB} = require('./DB_mangement_jenkins/add_data_to_DB')
 const fetch = require('node-fetch');
-const log = console.log
+
+const isDebug = true;
+const log = (str) => {
+    if (isDebug) console.log(str)
+}
 
 async function main() {
     const app = express()
-
     const PORT = process.env.PORT || 5000
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
@@ -24,7 +28,15 @@ async function main() {
     })*/
     //environment:
     //await update_environments()
-    await get_existed_environments()
+    await update_builds()
+
+
+    /*const env = envs.find((value, index, array) => {
+        return value.localeCompare(envForTest)
+    })*/
+    //console.log(env)
+
+
     //await update_builds()
     //const builds = await getBuilds();
     // const url = 'http://localhost:5000/build';
