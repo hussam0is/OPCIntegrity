@@ -9,7 +9,7 @@ const log = (str) => {
 // (1) Adding environment to the database.
 const addEnvironmentToDB = async (Env_name) => {
     const url = 'http://localhost:5000/environment';
-    const job = {environment_name: Env_name}
+    const job = {'environment_name': Env_name}
     fetch(url, {
         method: 'POST',
         body: JSON.stringify(job),

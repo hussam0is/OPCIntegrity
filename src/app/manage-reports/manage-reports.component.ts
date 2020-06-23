@@ -12,4 +12,7 @@ export class ManageReportsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sendIntegrityReport(){
+    
+  }
 }
