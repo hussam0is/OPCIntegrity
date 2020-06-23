@@ -14,4 +14,7 @@ export class BuildOverViewComponent implements OnInit {
   runBuild(){
 
   }
+  sendReport(){
+    
+  }
 }
