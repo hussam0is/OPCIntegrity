@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <title>Integrity Management System</title>
 <body>
 
@@ -21,3 +22,132 @@
 <h1>Deep Analysis</h1>
 
 </body>
+=======
+<title>Integrity Management System</title>
+<body>
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">      
+      <ul class="nav navbar-nav">
+        <img src="https://i.ibb.co/BwKS9b0/Logo-png.jpg" alt="Logo-png" border="0">
+        <li><a id="len1" class="hoverable" href="#" routerLink="/homeAdmin" >Home</a></li>
+        <li><a id="len2" class="hoverable" href="#" routerLink="/allTestsAdmin">All Tests</a></li>
+        <li><a id="len3" class="hoverable" href="#" routerLink="/runBuildAdmin">Run Build</a></li>
+        <li><a id="len4" class="hoverable" href="#" routerLink="/viewReportsAdmin">Reports</a></li>
+        <li><a id="len5" class="hoverable" href="#" routerLink="/users">Manage Users</a></li>
+        <li><a id="len6" class="hoverable" href="#" routerLink="/managereports">Manage Reports</a></li>
+        <li><a id="len7" class="hoverable" href="#" routerLink="/deepAnalysis"  style="color:rgb(133, 195, 247);">Deep Analysis</a></li>
+      </ul>
+     </div>
+    </nav>
+  </div>
+
+<h1>Deep Analysis</h1>
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="chart">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [dataLabels]="chartOptions.dataLabels"
+    [title]="chartOptions.title"
+    [colors]="chartOptions.colors"
+    [xaxis]="chartOptions.xaxis"
+    [yaxis]="chartOptions.yaxis"
+  ></apx-chart>
+</div>
+<p id="pp">Strong Relation: 80-100, Weak Relation: 50-79</p>
+<div>
+  <table  >
+      <thead >
+      <tr>
+          <th>Test1 ID</th>
+          <th>Test2 ID</th>
+          <th>Relation</th>
+          <th>Observation</th>
+      </tr>
+      <tr id="row1" >
+        <td>9</td>
+        <td>5</td>
+          <td>Test #9 fails when test #5 fails</td>
+          <td>Strong</td>
+      </tr>
+      <tr id="row2" >
+        <td>3</td>
+        <td>6</td>
+        <td>Test #3 succeeds when test #6 fails</td>
+        <td>Strong</td>
+
+      
+    </tr>
+    <tr id="row3" >
+      <td>9</td>
+      <td>1</td>
+      <td>Test #9 fails when test #1 succeeds</td>
+      <td>Weak</td>
+
+    
+    
+  </tr>
+  <tr id="row4" >
+    <td>5</td>
+    <td>8</td>
+    <td>Test #5 fails when test #8 fails</td>
+    <td>Weak</td>
+
+  
+  
+</tr>
+<tr id="row5" >
+  <td>2</td>
+  <td>1</td>
+  <td>Test #2 succeeds when test #1 succeeds</td>
+  <td>Strong</td>
+
+
+
+
+</tr>
+<tr id="row6" >
+  <td>1</td>
+  <td>6</td>
+  <td>Test #1 fails when test #6 fails</td>
+  <td>Strong</td>
+
+
+
+
+</tr>
+<tr id="row7" >
+  <td>7</td>
+  <td>3</td>
+  <td>Test #7 succeeds when test #3 fails</td>
+  <td>Weak</td>
+</tr>
+<tr id="row8" >
+  <td>9</td>
+  <td>2</td>
+  <td>Test #9 fails when test #2 fails</td>
+  <td>Weak</td>
+</tr>
+<tr id="row9" >
+  <td>9</td>
+  <td>10</td>
+  <td>Test #9 succeeds when test #10 succeeds</td>
+  <td>Weak</td>
+
+</tr>
+<tr id="row10" >
+  <td>10</td>
+  <td>4</td>
+  <td>Test #10 fails when test #4 fails</td>
+  <td>Weak</td>
+
+</tr>
+      </thead>
+  </table>
+</div>
+
+</body>
+>>>>>>> f2eaad2e21b76266e6e18347759fa2f9b529458a
