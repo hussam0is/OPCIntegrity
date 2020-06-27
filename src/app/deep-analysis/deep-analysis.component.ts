@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-deep-analysis',
-  templateUrl: './deep-analysis.component.html',
-  styleUrls: ['./deep-analysis.component.scss']
-})
-export class DeepAnalysisComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-=======
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {
@@ -221,6 +204,3 @@ export class DeepAnalysisComponent implements OnInit {
   }
 
 }
-
-
->>>>>>> f2eaad2e21b76266e6e18347759fa2f9b529458a
