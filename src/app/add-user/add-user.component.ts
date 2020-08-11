@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {addUserToDB} from '../node/index'
 
 @Component({
   selector: 'app-add-user',
@@ -20,7 +21,7 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
   addUser(){
-    const response = this.http.post('http://localhost:3000/addUser',{
+    const response = this.http.post('addUser',{
       id: this.userId,
       first: this.firstName,
       last: this.lastName,

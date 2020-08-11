@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {addTestToDB} from '../node/index'
 
 @Component({
   selector: 'app-add-new-test',

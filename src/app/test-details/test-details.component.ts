@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {updateTest , deleteTest } from '../node/index'
 
 @Component({
   selector: 'app-test-details',
