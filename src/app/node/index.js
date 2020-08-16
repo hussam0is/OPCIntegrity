@@ -1,25 +1,30 @@
-
+import models from './models';
+import { Router } from 'express';
 const express = require('express')
-const JH = require('./JenkinsHandling')
-const {getBuilds} = require('./builds')
-const {getJobs} = require('./jobs')
-const bodyParser = require('body-parser');
-const {update_environments, update_builds} = require('./DB_mangement_jenkins/sendToDB')
-const {get_existed_environments} = require('./DB_mangement_jenkins/getFromDB')
-const fetch = require('node-fetch');
+
+// const JH = require('./JenkinsHandling')
+// const {getBuilds} = require('./builds')
+// const {getJobs} = require('./jobs')
+ const bodyParser = require('body-parser');
+const router = Router();
+// const {update_environments, update_builds} = require('./DB_mangement_jenkins/sendToDB')
+// const {get_existed_environments} = require('./DB_mangement_jenkins/getFromDB')
+ const fetch = require('node-fetch');
 const log = console.log
+const cors = require('cors');
 
 const app = express()
 const PORT = process.env.PORT || 5000
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-const builds = await getBuilds()
-const jobs = await getJobs()
-log("WE GOT " + jobs.length + " JOBS:")
-log("WE GOT " + builds.length + " BUILDS:")
-await get_existed_environments()
+app.use(cors())
+// const builds = await getBuilds()
+// const jobs = await getJobs()
+// log("WE GOT " + jobs.length + " JOBS:")
+// .log("WE GOT " + builds.length + " BUILDS:")
+//  await get_existed_environments()
 app.listen(PORT, () => log('server started on port', PORT))
-
+app.post('/addEnvironment', (a1 , a2)=> {console.log(a1)} )
 const environments =[];
 const get_existed_environments = () => {
   //environment >> GET method: getting an array with all jobs(environments) names
@@ -299,3 +304,9 @@ const updateTest = (id, data) => {
   });
 }
 exports.updateTest = updateTest
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// router.get('/:user_id', async (req, res) => {
+//   const users = await req.context.models.User.find();
+//   return res.send(users);
+// });

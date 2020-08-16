@@ -10,6 +10,8 @@
 // // Raise an event
 // emitter.emit('messege',{id: 1, url:'http://'});
 
+import models from './models';
+import { Router } from 'express';
 const http = require('http');
 
 const server = http.createServer((req,res) => {
@@ -23,6 +25,6 @@ const server = http.createServer((req,res) => {
   }
 });
 
-server.listen(3000);
+server.listen(5000);
 
-console.log('Listening on port 3000...');
+console.log('Listening on port 5000...');
