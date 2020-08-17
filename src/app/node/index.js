@@ -1,12 +1,11 @@
-import models from './models';
-import { Router } from 'express';
+
 const express = require('express')
 
 // const JH = require('./JenkinsHandling')
 // const {getBuilds} = require('./builds')
 // const {getJobs} = require('./jobs')
  const bodyParser = require('body-parser');
-const router = Router();
+// const router = Router();
 // const {update_environments, update_builds} = require('./DB_mangement_jenkins/sendToDB')
 // const {get_existed_environments} = require('./DB_mangement_jenkins/getFromDB')
  const fetch = require('node-fetch');
@@ -24,7 +23,28 @@ app.use(cors())
 // .log("WE GOT " + builds.length + " BUILDS:")
 //  await get_existed_environments()
 app.listen(PORT, () => log('server started on port', PORT))
-app.post('/addEnvironment', (a1 , a2)=> {console.log(a1)} )
+app.post('/addEnvironment', async (req, res)=> {
+  console.log(req);
+  const message = await req.context.models.Message.create({
+    environment_name: req.body.name});
+    var MongoClient = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/environment";
+    MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("mydb");
+      dbo.collection("customers").insertOne(res.send(message), function(err, res) {
+        if (err) throw err;
+        console.log("1 document inserted");
+        db.close();
+    });
+  // const message = await req.context.models.Message.create({
+  //   environment_name: req.body.name,
+  });
+ 
+  return res.send(message);
+} )
+
+
 const environments =[];
 const get_existed_environments = () => {
   //environment >> GET method: getting an array with all jobs(environments) names
