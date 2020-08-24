@@ -19,7 +19,7 @@
         <div>
           <label for="ReportTitle" >Kind of Report:</label>
           <br/>
-          <select id="Report" class="select-css" name="searchBy">
+          <select id="Report" class="select-css" name="searchBy"  [(ngModel)]="reportKind">
               <option value="Build Run Summary"></option>
               <option value="Integrity Status"></option>
           </select>
@@ -27,14 +27,15 @@
             <div>
               <label for="ReportTitle" >Report Title:</label>
               <br/>
-              <input type="ReportTitle" name="ReportTitle" id="Report">
+      
+              <input type="ReportTitle" name="ReportTitle" id="Report"  [(ngModel)]="ReportTitle">
             </div>
 
               <div>
                 <br/>
                 <label for="ReportTitle" styile="display: inline-block;" >Default Reporters:</label>
                 <label style="padding-left: 105px;">Search Build by:</label>
-                  <select id="SearchUserby"   >
+                  <select id="SearchUserby"  [(ngModel)]="DefaultReporters"   >
                     <option value="FirstName">First Name</option>
                     <option value="LastName">Last Name</option>
                     <option value="UserId">User ID</option>
@@ -68,13 +69,13 @@
         </div>
         <div class="days">
           <label class="timer">Send Report Every:</label>
-          <input type="ReportTimer" name="ReportTimer" id="ReportTimer">
+          <input type="ReportTimer" name="ReportTimer" id="ReportTimer" [(ngModel)]="ReportTimer">
         </div>
         <label id="timer1" >Days</label>
         <br/>
         <br/>
         <div style="text-align:center; float:right;padding-right: 280px;">
-          <input id="txt" type="text" value="Save Report Kind" style="text-align:center;">
+          <input id="txt" type="text" value="Save Report Kind" (click)="saveReport()" style="text-align:center;">
         </div>
         </form>
      </div>

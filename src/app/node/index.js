@@ -27,22 +27,22 @@ app.post('/addEnvironment', async (req, res)=> {
   console.log(req);
   const message = await req.context.models.Message.create({
     environment_name: req.body.name});
-    var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/environment";
-    MongoClient.connect(url, function(err, db) {
-      if (err) throw err;
-      var dbo = db.db("mydb");
-      dbo.collection("customers").insertOne(res.send(message), function(err, res) {
-        if (err) throw err;
-        console.log("1 document inserted");
-        db.close();
-    });
-  // const message = await req.context.models.Message.create({
-  //   environment_name: req.body.name,
-  });
  
   return res.send(message);
 } )
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("mydb");
+//   dbo.collection("customers").insertOne(res.send(message), function(err, res) {
+//     if (err) throw err;
+//     console.log("1 document inserted");
+//     db.close();
+//   });
+// });
 
 
 const environments =[];

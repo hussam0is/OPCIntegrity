@@ -25,16 +25,16 @@ export class AddNewTestComponent implements OnInit {
   }
 
   addTest(){
-    this.http.post('addTest',{
+    this.http.post('http://localhost:5000/test',{
       category: this.category,
       group: this.group,
-      testCase: this.testCase,
-      testTitle: this.testTitle,
+      test_case: this.testCase,
+      test_title: this.testTitle,
       symbol: this.symbol,
-      testSummary:  this.testSummary,
-      testSteps: this.testSteps,
-      testData: this.testData,
-      expectedResult: this.expectedResult,
+      test_summary:  this.testSummary,
+      test_steps: this.testSteps,
+      test_data: this.testData,
+      expected_result: this.expectedResult,
       notes: this.notes}).toPromise().then(s=>console.log(s));
   }
 

@@ -19,22 +19,22 @@
       <div>
         <label for="ReportTitle" >ID:</label>
         <br/>
-        <input type="enviName" name="enviName" id="enviName">
+        <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportId">
       </div>
           <div>
             <label  >Kind:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportKind">
           </div>
           <div>
             <label  >Title:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportTitle">
           </div>
         <br>
         <div>
           <label  >Reported To:</label>
-    <select id="users" size="All" multiple>
+    <select id="users" size="All" multiple [(ngModel)]="ReportTo">
       <option value=""></option>
       <option value=""></option>
       <option value=""></option>
@@ -48,13 +48,13 @@
     <br/>
     <label  >Date:</label>
     <br/>
-    <input type="enviName" name="enviName" id="enviName">
+    <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportDate">
   </div>
   <div>
     <br/>
     <label  >Content:</label>
     <br/>
-    <textarea style="" for="content" name="content" rows="12" cols="50"></textarea> 
+    <textarea styl ="" for="content" name="content" rows="12" cols="50"></textarea> 
    </div>
       </div> 
       </form>

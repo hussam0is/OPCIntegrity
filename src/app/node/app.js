@@ -10,8 +10,7 @@
 // // Raise an event
 // emitter.emit('messege',{id: 1, url:'http://'});
 
-import models from './models';
-import { Router } from 'express';
+
 const http = require('http');
 
 const server = http.createServer((req,res) => {

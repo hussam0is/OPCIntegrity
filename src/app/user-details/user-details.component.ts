@@ -17,18 +17,24 @@ export class UserDetailsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    let user_id = this.userId;
+    this.http.get('http://localhost:5000/user'+ user_id).toPromise().then(s=>console.log(s));
+
+
   }
-  editUser(){ // ${this.testID} check if work
-    this.http.put('editUser/:${this.userId}',{
-      id: this.userId,
-      first: this.firstName,
-      last: this.lastName,
-      email: this.email,
-      pass: this.password,
-      type:  this.userType}).toPromise().then(s=>console.log(s));
+  editUser(){ 
+
+    this.http.put('http://localhost:5000/user/user_id',{
+      user_id: this.userId,
+      first_name: this.firstName,
+      last_name: this.lastName,
+      email_address: this.email,
+      password: this.password,
+      user_type:  this.userType}).toPromise().then(s=>console.log(s));
   }
   deleteUser(){
-    this.http.delete('deleteUser/:${this.userId}').toPromise().then(s=>console.log(s));
+    let user_id = this.userId;
+    this.http.delete('http://localhost:5000//user'+ user_id).toPromise().then(s=>console.log(s));
   }
 
 }

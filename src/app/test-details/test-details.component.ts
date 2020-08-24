@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {updateTest , deleteTest } from '../node/index'
+import { ActionSequence } from 'protractor';
 
 @Component({
   selector: 'app-test-details',
@@ -16,28 +17,31 @@ export class TestDetailsComponent implements OnInit {
   symbol: string;
   testSummary: string;
   testSteps: string;
-  testData: string;
+  testData:DataView;
   expectedResult: string;
   notes: string;
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    let test_id = this. testID;
+    this.http.get('http://localhost:5000//test'+ test_id).toPromise()
   }
-  editTest(){ // ${this.testID} check if work
-    this.http.put('editTest/:${this.testID}',{
+
+  editTest(){ 
+    this.http.put('http://localhost:5000/test/test_id',{
       category: this.category,
       group: this.group,
-      testCase: this.testCase,
-      testTitle: this.testTitle,
+      test_case: this.testCase,
+      test_title: this.testTitle,
       symbol: this.symbol,
-      testSummary:  this.testSummary,
-      testSteps: this.testSteps,
-      testData: this.testData,
-      expectedResult: this.expectedResult,
+      test_summary:  this.testSummary,
+      test_steps: this.testSteps,
+      test_data: this.testData,
+      expected_result: this.expectedResult,
       notes: this.notes}).toPromise().then(s=>console.log(s));
   }
   deleteTest(){
-    this.http.delete('deleteTest/:${this.testID}').toPromise().then(s=>console.log(s));
+    this.http.delete('http://localhost:5000/test '+ this. testID).toPromise().then(s=>console.log(s));
   }
 }
