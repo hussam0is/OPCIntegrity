@@ -1,6 +1,19 @@
 
 const express = require('express')
 
+// var express = require('express')
+//   , cors = require('cors')
+//   , app = express();
+// const corsOptions = {
+//   origin: true,
+//   credentials: true
+// }
+// app.options('*', cors(corsOptions)); // preflight OPTIONS; put before other routes
+// app.listen(5000, function(){
+//   console.log('CORS-enabled web server listening on port 5000');
+// });
+
+
 // const JH = require('./JenkinsHandling')
 // const {getBuilds} = require('./builds')
 // const {getJobs} = require('./jobs')
@@ -17,19 +30,47 @@ const PORT = process.env.PORT || 5000
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors())
+app.use((res, next) => {
+  res.header('Access-Control-Allow-Origin','*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH');
+  next();
+});
 // const builds = await getBuilds()
 // const jobs = await getJobs()
 // log("WE GOT " + jobs.length + " JOBS:")
 // .log("WE GOT " + builds.length + " BUILDS:")
 //  await get_existed_environments()
+<<<<<<< HEAD
 app.listen(PORT, () => log('server started on port', PORT))
 app.post('/addEnvironment', async (req, res)=> {
   console.log(req);
   const message = await req.context.models.Message.create({
     environment_name: req.body.name});
+=======
+//app.listen(PORT, () => log('server started on port', PORT))
+// app.post('/environment', async (req, res)=> {
+//   console.log(req);
+//   const message = await req.context.models.Message.create({
+//     environment_name: req.body.name});
+//     var MongoClient = require('mongodb').MongoClient;
+//     var url = "mongodb://localhost:27017/environment";
+//     MongoClient.connect(url, function(err, db) {
+//       if (err) throw err;
+//       var dbo = db.db("mydb");
+//       dbo.collection("customers").insertOne(res.send(message), function(err, res) {
+//         if (err) throw err;
+//         console.log("1 document inserted");
+//         db.close();
+//     });
+//   // const message = await req.context.models.Message.create({
+//   //   environment_name: req.body.name,
+//   });
+>>>>>>> 27b57279ef98c796df5b19b78ba30fc1ec72e337
  
-  return res.send(message);
-} )
+//   return res.send(message);
+// } )
 
 // var MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb://localhost:27017/";
@@ -103,7 +144,7 @@ const addEnvironmentToDB = () => {
     fetch(url, {
         method: 'POST',
         body: JSON.stringify(environment),
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json'}
     }).then(res => res.json()) // expecting a json response
         .then(json => {
             if (json.error === true) {

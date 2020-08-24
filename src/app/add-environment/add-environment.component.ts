@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {addEnvironmentToDB} from '../node/index'
 import { from } from 'rxjs';
@@ -10,12 +10,12 @@ import { from } from 'rxjs';
   templateUrl: './add-environment.component.html',
   styleUrls: ['./add-environment.component.scss']
 })
-export class AddEnvironmentComponent implements OnInit {
+export class AddEnvironmentComponent {
   environment_name: string;
   constructor(private http: HttpClient) { }
-
+  
   ngOnInit(): void {
-  }
+   }
   addEnvironment(){
     console.log(this.environment_name);
     this.http.post('http://localhost:5000/environment',{
