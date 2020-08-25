@@ -68,8 +68,8 @@
           <th>Password</th>
           <th>User Type</th>
       </tr>
-      <!-- <tr *ngFor='let user of displayList' [routerLink]="['/userDetails', user['user_id']]" (click)="getIdInRow()"> -->
-        <tr 'let user of displayList' [routerLink]="['/userDetails', user['user_id']]" (click)="getIdInRow()">
+      <tr *ngFor='let user of displayList' [routerLink]="['/userDetails', user['user_id']]" (click)="getIdInRow()">
+        <!-- <tr 'let user of displayList' [routerLink]="['/userDetails', user['user_id']]" (click)="getIdInRow()"> -->
         <td id="user_id_txt"></td>
         <td></td>
         <td></td>
