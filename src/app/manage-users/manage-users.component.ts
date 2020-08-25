@@ -29,7 +29,7 @@ export class ManageUsersComponent implements OnInit {
     var field = $("#field").val();
     var term = $("#txt1").val();
     this.http.get('http://localhost:5000//user?field='+ field + '&search_text=' + term).toPromise()
-    .then(res =>  {this.list = res; console.log(this.list); console.log(Object.keys(this.list).length); this.list_len = Object.keys(this.list).length;
+    .then(res =>  {this.list = res; this.list_len = Object.keys(this.list).length;
     var table = document.getElementById("usersTable");
     var table_titles = ["user_id", "first_name", "last_name", "email_address", "password", "user_type"];
     
@@ -59,6 +59,7 @@ export class ManageUsersComponent implements OnInit {
     }
   });
   }
+
 
   nextChunk(){
     // var table = document.getElementById("usersTable");
