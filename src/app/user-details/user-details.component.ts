@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {deleteUser , updateUser } from '../node/index'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -14,12 +15,17 @@ export class UserDetailsComponent implements OnInit {
   email: string;
   password: string;
   userType: string;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    let user_id = this.userId;
-    this.http.get('http://localhost:5000/user'+ user_id).toPromise().then(s=>console.log(s));
+    this.route.params.subscribe(t => {let user_id = t.id;
+    this.http.get('http://localhost:5000/user/'+ user_id).toPromise().then(s=>console.log(s));})
+    // let user_id = this.userId;
+    // this.http.get('http://localhost:5000/user/'+ user_id).toPromise().then(s=>console.log(s));
   }
+
+
+
   editUser(){ 
 
     this.http.put('http://localhost:5000/user/user_id',{

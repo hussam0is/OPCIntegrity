@@ -20,12 +20,14 @@ export class ManageUsersComponent implements OnInit {
   list_len: number;
   search_list: object;
   chunk_id: number;
+  displayList: Array<any>=[{},{},{},{},{},{},{},{},{},{}]
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
   }
   searchUserby(){
+    this.displayList=[]
     var field = $("#field").val();
     var term = $("#txt1").val();
     this.http.get('http://localhost:5000//user?field='+ field + '&search_text=' + term).toPromise()
@@ -50,16 +52,39 @@ export class ManageUsersComponent implements OnInit {
     this.search_list = final;
     this.chunk_id = 0;
 
+    //reset table data
+    // for (var i = 0; i < 10; i++) {
+    //   var d = table.getElementsByTagName("tr")[i+1];
+    //   for (var j = 0; j < 6; j++){
+    //     d.getElementsByTagName("td")[j].innerHTML = null; 
+    //  }
+    // }
+
     //add first chunk to table
-    for (var i = 0; i < this.list_len && i < 10; i++) {
-      var d = table.getElementsByTagName("tr")[i+1];
-      for (var j = 0; j < 6; j++){
-        d.getElementsByTagName("td")[j].innerHTML = this.list[i][(table_titles[j])]; 
-     }
+    // for (var i = 0; i < this.list_len && i < 10; i++) {
+    //   var d = table.getElementsByTagName("tr")[i+1];
+    //   for (var j = 0; j < 6; j++){
+    //     d.getElementsByTagName("td")[j].innerHTML = this.list[i][(table_titles[j])]; 
+    //  }
+    // }
+
+    // this.displayList.push(this.list[i]);
+    for (var i = 0;  i < 10; i++){
+      this.displayList.push(final[0][i]);
     }
+    console.log(this.displayList)
+
   });
   }
 
+
+  getIdInRow(){  
+    // var field0 = $("#usersTable").find('tr').click();
+    // console.log(field0);
+
+    // var user_id = document.getElementById('user_id_txt').innerHTML;
+    // console.log("ui:" + user_id);
+  }
 
   nextChunk(){
     // var table = document.getElementById("usersTable");
