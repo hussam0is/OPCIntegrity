@@ -15,7 +15,7 @@ export class ConnectComponent implements OnInit {
   ngOnInit(): void {
   }
   logIn(){
-  //   if ( this.email === (this.http.get('http://localhost:5000/user' + this.email))  && this.password == (this.http.get('http://localhost:5000/user' + this.password))
-  // }
-}
+  //  if ( this.email == (this.http.get('http://localhost:5000/user' + this.email))  && this.password == (this.http.get('http://localhost:5000/user' + this.password))
+//    }
+ }
 }

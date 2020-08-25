@@ -25,7 +25,7 @@ export class TestDetailsComponent implements OnInit {
 
   ngOnInit(): void { 
     let test_id = this. testID;
-    this.http.get('http://localhost:5000//test'+ test_id).toPromise()
+    this.http.get('http://localhost:5000/test'+ test_id).toPromise()
   }
 
   editTest(){ 
@@ -42,6 +42,6 @@ export class TestDetailsComponent implements OnInit {
       notes: this.notes}).toPromise().then(s=>console.log(s));
   }
   deleteTest(){
-    this.http.delete('http://localhost:5000/test '+ this. testID).toPromise().then(s=>console.log(s));
+    this.http.delete('http://localhost:5000/test/test_id '+ this. testID).toPromise().then(s=>console.log(s));
   }
 }
