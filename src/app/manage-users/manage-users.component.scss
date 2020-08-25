@@ -139,7 +139,15 @@ padding:6px 3px;
 background:linear-gradient(white,#9ea7af);
 border:1px solid #222;
 border-radius:0.3em;
-
+font-size: 15px;
+font-family:  Arial, sans-serif;
+width:100%;
+padding:2px 2px 2px 4px;
+border:2px solid #222;
+border-radius: .5em;
+margin-bottom:0px;
+background:linear-gradient(white, rgb(133, 195, 247));
+text-shadow:0 -1px 0 rgba(0,0,0,0.4);
 }
 .hot-container p {
   margin-top: 10px;
@@ -251,7 +259,7 @@ div.table-title {
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   text-transform:uppercase;
 }
-#txt{
+.txt{
   font-size: 15px;
   font-family:  Arial, sans-serif;
   width:100%;

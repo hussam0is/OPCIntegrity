@@ -35,20 +35,20 @@
   <br>
   <div class="lbl">
   <label>Search User by:</label>
-  <select style="margin-left: 90px;" class="select-css" name="searchBy">
-    <option value="userId">User Id</option>
-    <option value="firstName">First Name</option>
-    <option value="lastName">Last Name</option>
-    <option value="email">Email Address</option>
-    <option value="userType">User Type</option>
+  <select style="margin-left: 90px;" class="select-css" name="searchBy" id="field">
+    <option value="user_id">User Id</option>
+    <option value="first_name">First Name</option>
+    <option value="last_name">Last Name</option>
+    <option value="email_address">Email Address</option>
+    <option value="user_type">User Type</option>
   </select>
 </div>
   <br>
 <div class="row">
   <div style="float:left; padding-left:485px;">
-  <input id="txt" style="width: 150px; border:1px;" type="text" onclick="value ='' "  value="Enter Search Word">
+  <input id="txt1" style="width: 150px; border:1px;" type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
-<button id="txt" style="width: 30px; margin-right: 240px;" type="submit" onclick="searchUserby()" ><i class="fa fa-search"></i></button>
+<button class="txt" style="width: 30px; margin-right: 240px;" type="submit"  (click)="searchUserby()" ><i class="fa fa-search"></i></button>
 <div style="float:right;padding-right: 280px;">
   <input id="txt" style="width: 120px;" type="text" routerLink="/addUser" value="Add New User">
 </div>
@@ -57,7 +57,7 @@
 </div>
 <div>
   <br>
-  <table  >
+  <table id="usersTable"  >
       <thead >
       <tr >
           <th>User ID</th>
@@ -68,12 +68,12 @@
           <th>User Type</th>
       </tr>
       <tr id="row1" routerLink="/userDetails">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
 
       </tr>
       <tr id="row2" routerLink="/userDetails">
@@ -165,7 +165,7 @@
 <div>
 
   <a href="#">
-    <span class="left"></span>
+    <span class="left"  (click)="nextChunk()"></span>
   </a>
   <a> <p class="page">Page 1</p></a>
     <a  href="#">

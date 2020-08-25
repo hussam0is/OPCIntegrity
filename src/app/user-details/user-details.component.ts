@@ -19,8 +19,6 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit(): void {
     let user_id = this.userId;
     this.http.get('http://localhost:5000/user'+ user_id).toPromise().then(s=>console.log(s));
-
-
   }
   editUser(){ 
 
