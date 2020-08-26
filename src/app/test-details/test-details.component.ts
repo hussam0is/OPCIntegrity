@@ -14,7 +14,7 @@ export class TestDetailsComponent implements OnInit {
   group: string;
   testCase: string;
   testTitle: string;
-  symbol: string;
+  pic: string;
   testSummary: string;
   testSteps: string;
   testData:DataView;
@@ -23,7 +23,7 @@ export class TestDetailsComponent implements OnInit {
 
   constructor(private http: HttpClient, private route:ActivatedRoute) { }
   ngOnInit(): void {
-    this.route.params.subscribe(t => {let test_id = t.idTest;
+    this.route.params.subscribe(t => {let test_id = t.id;
     this.http.get('http://localhost:5000/test/'+  test_id).toPromise().then(s=> {
     (<HTMLInputElement>document.getElementById("test_id")).value  = s['test_id'];
     (<HTMLInputElement>document.getElementById("category")).value  = s['category'];

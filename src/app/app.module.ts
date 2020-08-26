@@ -83,7 +83,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
       { path: 'buildStop', component: BuildStopComponent },
       { path: 'viewReports', component: ViewReportsComponent },
       { path: 'userDetails/:id', component: UserDetailsComponent },
-      { path: 'testDetails/:idTest', component: TestDetailsComponent },
+      { path: 'testDetails/:id', component: TestDetailsComponent },
       { path: 'testHistory', component:TestHistoryComponent },
       { path: 'deepAnalysis', component: DeepAnalysisComponent },
       { path: 'viewReportsAdmin', component: ViewReportsAdminComponent },

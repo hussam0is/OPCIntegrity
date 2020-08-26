@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 const JH = require('../JenkinsHandling')
-
+const jobTriggers = require('../jobTriggers')
 const isDebug = false;
 const log = (str) => {
     if (isDebug) console.log(str)
@@ -32,3 +32,4 @@ const addEnvironmentToDB = async (Env_name) => {
     });
 }
 exports.addEnvironmentToDB = addEnvironmentToDB
+
