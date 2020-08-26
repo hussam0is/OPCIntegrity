@@ -32,6 +32,12 @@ input[type=enviName] {
   //margin-bottom:0px;
   //margin-top: 10px;
   margin-left: 25px;
+  margin-top: -46px;
+  float:right;
+  resize: none;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  font-size: 15px;
+  font-family:  Arial, sans-serif;
 }
 input[id=enviName]:hover {
   box-shadow:

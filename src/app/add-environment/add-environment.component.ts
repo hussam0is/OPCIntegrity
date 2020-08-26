@@ -18,7 +18,7 @@ export class AddEnvironmentComponent {
    }
   addEnvironment(){
     this.http.post('http://localhost:5000/environment',{
-      environment_name:this.environment_name}).toPromise().then(s=>console.log(s));
+      environment_name:this.environment_name}).toPromise().then();
   }
 
   

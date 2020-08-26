@@ -90,6 +90,7 @@
 body {
   background-color: rgb(13, 76, 127);
   font-weight:600;
+  height: 1000px;
   text-align:center !important;
 }
 table {
@@ -253,7 +254,18 @@ div.table-title {
   border:2px solid #222;
   border-radius: .5em;
   margin-bottom:0px;
-
+  background:linear-gradient(white, rgb(133, 195, 247));
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+}
+#txt1{
+  font-size: 15px;
+  font-family:  Arial, sans-serif;
+  width:100%;
+  margin-left: 100px;
+  padding:2px 2px 2px 4px;
+  border:2px solid #222;
+  border-radius: .5em;
+  margin-bottom:0px;
   background:linear-gradient(white, rgb(133, 195, 247));
   text-shadow:0 -1px 0 rgba(0,0,0,0.4);
 }
