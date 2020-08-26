@@ -24,26 +24,45 @@
   <br>
   <div class="lbl">
   <label>Search Report by:</label>
+<<<<<<< HEAD
   <select style="margin-left: 50px;" class="select-css" name="searchBy"  id="field">
       <option value="buildId">Build ID</option>
+=======
+  <select style="margin-left: 90px;" class="select-css" name="searchBy" id="field">
+    <option value="report_id">Report ID</option>
+    <option value="build_id">Build ID</option>
+>>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
       <option value="date">Date</option>
   </select>
 </div>
   <br>
 <div class="row">
+<<<<<<< HEAD
   <div style="float:left; padding-left:485px;">
   <input id="txt" style="width: 150px; margin-left: 160px;" type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
 <button id="txt" style="width: 30px; margin-right: 480px;" type="submit" (click)="searchReportedby()" ><i class="fa fa-search"></i></button>
+=======
+  <div style="float:left;">
+    <input id="txt1" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+  </div>
+  <button id="txt" style="width: 30px; margin-right: 400px;" type="submit" (click)="searchReportby()" ><i class="fa fa-search"></i></button>
+>>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
 </div>
   <br>
 </div>
 <div>
   <br>
+<<<<<<< HEAD
   <table id="ReportsTable" >
+=======
+  <table >
+>>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
       <thead >
-      <tr >
+      <tr>
+          <th>Report ID</th>
           <th>Build ID</th>
+<<<<<<< HEAD
           <th>Group</th>
           <th>Status</th>
           <th>Report Kind</th>
@@ -109,8 +128,18 @@
   <td></td>
   <td></td>
 </tr> -->
+=======
+          <th>Date</th>
+      </tr>
+      <tr *ngFor='let report of displayList' [routerLink]="['/reports', report['report_id']]">
+        <td>{{report['report_id']}}</td>
+        <td>{{report['build_id']}}</td>
+        <td>{{report['date']}}</td>
+    </tr>
+>>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
       </thead>
   </table>
 </div>
 <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> clicking on a report will open a report details window.</p>
+<br>
 </body>

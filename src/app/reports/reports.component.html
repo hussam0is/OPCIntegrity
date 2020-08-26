@@ -17,29 +17,30 @@
         <br/>
     <div class="bdy">
       <div>
-        <label for="ReportTitle" >ID:</label>
+        <label >ID:</label>
         <br/>
-        <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportId">
+        <input  id="report_id" type="enviName" name="enviName"  [(ngModel)]="ReportId">
       </div>
           <div>
             <label  >Kind:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportKind">
+            <input  id="kind" type="enviName" name="enviName"  [(ngModel)]="ReportKind">
           </div>
           <div>
             <label  >Title:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportTitle">
+            <input  id="title" type="enviName" name="enviName"  [(ngModel)]="ReportTitle">
           </div>
         <br>
         <div>
           <label  >Reported To:</label>
-    <select id="users" size="All" multiple [(ngModel)]="ReportTo">
+    <select  id="users" size="All" multiple [(ngModel)]="ReportTo">
+      <option id="user_name" value=""></option>
+      <!-- <option value=""></option>
       <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
+      <option value=""></option> -->
     </select>
+
   </div>              
 
   <div>
@@ -48,13 +49,13 @@
     <br/>
     <label  >Date:</label>
     <br/>
-    <input type="enviName" name="enviName" id="enviName" [(ngModel)]="ReportDate">
+    <input  id="date" type="enviName" name="enviName"  [(ngModel)]="ReportDate">
   </div>
   <div>
     <br/>
     <label  >Content:</label>
     <br/>
-    <textarea styl ="" for="content" name="content" rows="12" cols="50"></textarea> 
+    <textarea  id="content" styl ="" for="content" name="content" rows="12" cols="50"></textarea> 
    </div>
       </div> 
       </form>

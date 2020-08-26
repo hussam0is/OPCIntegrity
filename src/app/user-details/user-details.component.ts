@@ -31,7 +31,6 @@ export class UserDetailsComponent implements OnInit {
     });})
   }
 
-
   editUser(){ 
     let user_id = (<HTMLInputElement>document.getElementById("us_id")).value;
     this.http.put('http://localhost:5000/user/' + user_id ,{
@@ -40,11 +39,11 @@ export class UserDetailsComponent implements OnInit {
       email_address:  (<HTMLInputElement>document.getElementById("email")).value,
       password:  (<HTMLInputElement>document.getElementById("password")).value,
       user_type:  (<HTMLInputElement>document.getElementById("userType")).value}).toPromise()
-      .then(s =>  console.log(s));
+      .then();
   }
 
   deleteUser(){
     let user_id = (<HTMLInputElement>document.getElementById("us_id")).value;
-    this.http.delete('http://localhost:5000//user/'+ user_id).toPromise().then(s=>console.log(s));
+    this.http.delete('http://localhost:5000//user/'+ user_id).toPromise().then();
   }
 }

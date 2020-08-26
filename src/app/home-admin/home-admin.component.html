@@ -26,25 +26,28 @@
   <br>
   <div class="lbl">
   <label>Current Environment:</label>
-  <select style="margin-left: 50px;" class="select-css" name="environment">
-      <option value="trunk">trunk</option>
-      <option value="client">client</option>
-      <option value="trail">trail</option>
+  <select id="select" style="margin-left: 50px;" class="select-css" name="environment">
+    <option id="env_name">Select Env.</option>
   </select>
 </div>
   <br>
   <div class="lbl">
   <label>Search Build by:</label>
+<<<<<<< HEAD
   <select style="margin-left: 85px;" class="select-css" name="searchBy" id="filed">
       <option value="build_sId">Build ID</option>
+=======
+  <select style="margin-left: 85px;" class="select-css" name="searchBy" id="field">
+      <option value="build_id">Build ID</option>
+>>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
       <option value="status">Status</option>
-      <option value="date">Date</option>
+      <option value="start_time">Date</option>
   </select>
 </div>
   <br>
 <div class="row">
   <div style="float:left; padding-left:485px;">
-  <input id="txt" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+  <input id="txt1" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
 <button id="txt" style="width: 30px; margin-right: 200px;" type="submit" (click)="searchBuildby()" ><i class="fa fa-search"></i></button>
 <div style="float:right;padding-right: 280px;">
@@ -65,111 +68,19 @@
           <th>Date</th>
           <th>Start Time</th>
       </tr>
-      <tr id="row1" routerLink="/buildDetails">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-
-      </tr>
-      <tr id="row2" routerLink="/buildDetails">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-
+      <tr *ngFor='let build of displayList' [routerLink]="['/buildDetails', build['build_id']]">
+        <td>{{build['build_id']}}</td>
+        <td>{{build['group']}}</td>
+        <td>{{build['status']}}</td>
+        <td>{{build['result']}}</td>
+        <td>{{build['group']}}</td>
+        <td>{{build['start_time']}}</td>
     </tr>
-    <tr id="row3" routerLink="/buildDetails">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-  </tr>
-  <tr id="row4" routerLink="/buildDetails">
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-</tr>
-<tr id="row5" routerLink="/buildDetails">
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row6" routerLink="/buildDetails">
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row7" routerLink="/buildDetails">
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row8" routerLink="/buildDetails">
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row9" routerLink="/buildDetails">
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row10" routerLink="/buildDetails">
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
       </thead>
   </table>
 </div>
 <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> Double-clicking on a build row will reveal more details when the build is in a non-running state</p>
-
+<br>
 <div>
-
-  <a href="#">
-    <span class="left"></span>
-  </a>
-  <a> <p class="page">Page 1</p></a>
-    <a  href="#">
-      <span class="right"></span>
-    </a>
-
-
 </div>
 </body>
