@@ -112,6 +112,7 @@ addTestsDataToDB = async function (buildData) {
         const Categoryt = 'UniTest'
         const test_summaryt = 'Null'
         const test_groupt = getTestGroup(buildData["testsCases"][test])
+        
         const testData = {
             test_id: test_idt,
             category: Categoryt,
