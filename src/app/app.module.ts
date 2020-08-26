@@ -72,21 +72,13 @@ import { NgApexchartsModule } from "ng-apexcharts";
       { path: 'home', component: HomeComponent },
       { path: 'allTest', component: AllTestsComponent },
       { path: 'runBuild', component: RunBuildComponent },
-<<<<<<< HEAD
-      { path: 'reports/:idReport', component: ReportsComponent },
-=======
       { path: 'reports/:id', component: ReportsComponent },
->>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
       { path: 'users', component:  ManageUsersComponent },
       { path: 'managereports', component: ManageReportsComponent },
       { path: 'addEnvironment', component: AddEnvironmentComponent },
       { path: 'addTest', component: AddNewTestComponent },
       { path: 'addUser', component: AddUserComponent },
-<<<<<<< HEAD
-      { path: 'buildDetails/:idBuild', component: BuildDetailsComponent },
-=======
       { path: 'buildDetails/:id', component: BuildDetailsComponent },
->>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
       { path: 'buildOverView', component: BuildOverViewComponent },
       { path: 'buildStop', component: BuildStopComponent },
       { path: 'viewReports', component: ViewReportsComponent },

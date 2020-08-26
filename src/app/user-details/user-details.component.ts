@@ -31,6 +31,7 @@ export class UserDetailsComponent implements OnInit {
     });})
   }
 
+
   editUser(){ 
     let user_id = (<HTMLInputElement>document.getElementById("us_id")).value;
     this.http.put('http://localhost:5000/user/' + user_id ,{

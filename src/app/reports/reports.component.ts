@@ -16,13 +16,6 @@ export class ReportsComponent implements OnInit {
   constructor(private http: HttpClient, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-<<<<<<< HEAD
-    this.route.params.subscribe(t => {let report_id = t.idReport;
-      this.http.get('http://localhost:5000/reports/' + report_id).toPromise().then(s=>console.log(s));})
-    // let report_id = this.ReportId
-    // this.http.get('http://localhost:5000/reports/' + report_id).toPromise().then(s =>console.log(s) )
-  
-=======
     this.route.params.subscribe(t => {let report_id = t.id;
       this.http.get('http://localhost:5000/report/'+ report_id).toPromise().then(s=> {
         console.log(s);
@@ -34,7 +27,6 @@ export class ReportsComponent implements OnInit {
       //convert id's to names
       //    Object.keys(this.list).length
       console.log("repo_ids:" + s['reporters_ids']);
->>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
 
       for(var i=0; i< Object.keys(s['reporters_ids']).length; i++){
         var select = document.getElementById("users");

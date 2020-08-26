@@ -26,33 +26,19 @@
   <br>
   <br>
   <div class="lbl">
-<<<<<<< HEAD
-  <label>Search Report by:</label>
-  <select style="margin-left: 50px;" class="select-css" name="searchBy" id="field">
-      <option value="build_Id">Build ID</option>
-      <option value="date">Date</option>
-  </select>
-=======
     <label>Search Report by:</label>
     <select style="margin-left: 90px;" class="select-css" name="searchBy" id="field">
       <option value="report_id">Report ID</option>
       <option value="build_id">Build ID</option>
         <option value="date">Date</option>
     </select>
->>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
 </div>
   <br>
 <div class="row">
   <div style="float:left; padding-left:485px;">
-<<<<<<< HEAD
-  <input id="txt" style="width: 150px; margin-left: 160px;" type="text" onclick="value ='' "  value="Enter Search Word">
-</div>
-<button id="txt" style="width: 30px; margin-right: 480px;" type="submit" (click)="searchReportedby()" ><i class="fa fa-search"></i></button>
-=======
     <input id="txt1" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
   </div>
   <button id="txt" style="width: 30px; margin-right: 470px; margin-top: -2px;" type="submit" (click)="searchReportby()" ><i class="fa fa-search"></i></button>
->>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
 </div>
   <br>
 </div>
@@ -65,25 +51,10 @@
         <th>Build ID</th>
         <th>Date</th>
       </tr>
-<<<<<<< HEAD
-      <tr *ngFor='let report of displayList' [routerLink]="['/reports', report['report_id']]" (click)="getIdInRow()">
-      <td id="reportr_id_txt"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          
-      </tr>
-      <tr id="row2" routerLink="/reports">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-=======
       <tr *ngFor='let report of displayList' [routerLink]="['/reports', report['report_id']]">
         <td>{{report['report_id']}}</td>
         <td>{{report['build_id']}}</td>
         <td>{{report['date']}}</td>
->>>>>>> b78db94530b9db35c1ad55da3e26c5d30e80c094
     </tr>
       </thead>
   </table>
