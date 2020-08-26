@@ -32,8 +32,8 @@ export class AllTestsAdminComponent implements OnInit {
       this.displayList=[];
       this.http.get('http://localhost:5000/test').toPromise().then(rs =>  {this.list = rs; this.list_len = Object.keys(this.list).length;
       console.log(rs);
-      var table = document.getElementById("allTestTable");
-      var table_titles = ["test_id", "test_case", "test_title", "category", "test_summary", "test_rates","group","notes"];
+      // var table = document.getElementById("allTestTable");
+      // var table_titles = ["test_id", "test_case", "test_title", "category", "test_summary", "test_rates","group","notes"];
      
       for (var i = 0;  i < this.list_len; i++){
         this.displayList.push(this.list[i]);
@@ -48,11 +48,11 @@ export class AllTestsAdminComponent implements OnInit {
   searchTestby(){
       this.displayList=[]
       var field = $("#field").val();
-      var term = $("#txt").val();
-      this.http.get('http://localhost:5000//test?field='+ field + '&search_text=' + term).toPromise()
+      var term = $("#txt1").val();
+      this.http.get('http://localhost:5000/test?field='+ field + '&search_text=' + term).toPromise()
       .then(res =>  {this.list = res; this.list_len = Object.keys(this.list).length;
-      var table = document.getElementById("allTestTable");
-      var table_titles = ["test_id", "test_case", "test_title", "category", "test_summary", "test_rates","group","notes"];
+      // var table = document.getElementById("allTestTable");
+      // var table_titles = ["test_id", "test_case", "test_title", "category", "test_summary", "test_rates","group","notes"];
       
       for (var i = 0;  i < this.list_len; i++){
         this.displayList.push(this.list[i]);
