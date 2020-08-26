@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-reports',
@@ -12,11 +13,13 @@ export class ReportsComponent implements OnInit {
   ReportTitle:string;
   ReportTo: string;
   ReportDate: string;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    let report_id = this.ReportId
-    this.http.get('http://localhost:5000/reports/' + report_id).toPromise().then(s =>console.log(s) )
+    this.route.params.subscribe(t => {let report_id = t.idReport;
+      this.http.get('http://localhost:5000/reports/' + report_id).toPromise().then(s=>console.log(s));})
+    // let report_id = this.ReportId
+    // this.http.get('http://localhost:5000/reports/' + report_id).toPromise().then(s =>console.log(s) )
   
 
 }

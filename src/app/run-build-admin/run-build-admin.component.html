@@ -26,28 +26,30 @@
   <br>
   <div class="lbl">
   <label>Choose group number:</label>
-  <select style="margin-left: 60px;" class="select-css" name="environment">
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
+  <select style="margin-left: 60px;" class="select-css" name="environment" > 
+      <option value="1"></option>
+      <option value="2"></option>
+      <option value="3"></option>
+      <option value="4"></option>
+      <option value="5"></option>
   </select>
 </div>
 <br/>
 <div class="lbl">
   <label>Search by build number:</label>
-  <select style="margin-left: 50px;" class="select-css" name="environment">
+  <select style="margin-left: 50px;" class="select-css" name="environment" id="filed">
       <option value=""></option>
       <option value=""></option>
       <option value=""></option>
   </select>
   <br/>
   <br/>
-  <button id="txt" style="width: 150px; margin-left: 225px;" type="submit" onclick="searchBuildby()" >Show Build Tests</button>
+  <button id="txt" style="width: 150px; margin-left: 225px;" type="submit" (click)="searchBuildby()" >Show Build Tests</button>
 </div>
   <br>
   <div class="lbl">
   <label>Search Test by:</label>
-  <select style="margin-left: 115px;" class="select-css" name="searchBy">
+  <select style="margin-left: 115px;" class="select-css" name="searchBy" id="filed">
       <option value=""></option>
       <option value=""></option>
       <option value=""></option>
@@ -58,7 +60,7 @@
   <div style="float:left; padding-left:505px;">
   <input id="txt" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
-<button id="txt" style="width: 30px; margin-right: 625px; margin-top:-3px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+<button id="txt" style="width: 30px; margin-right: 625px; margin-top:-3px;" type="submit" (click)="searchTestby()" ><i class="fa fa-search"></i></button>
 </div>
 <div >
   <br/>
@@ -70,18 +72,13 @@
 </div>
 <div>
   <br>
-  <table  >
+  <table  id= "runBuildTable" >
       <thead >
       <tr >
-<<<<<<< HEAD
 
-        <th>Test Title</th>
-        <th>Status</th>
-=======
         <th>Test ID</th>
-        <th>Test Case</th>
         <th>Test Title</th>
->>>>>>> 4ef1436d06d7a4abf9fc74d0466d3fa88bb8e039
+        <th>Test Case</th>
         <th>Category</th>
         <th>Test Summary</th>
         <th>Group</th>

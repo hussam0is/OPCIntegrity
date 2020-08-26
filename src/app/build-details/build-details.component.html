@@ -22,60 +22,60 @@
             <br/>
             <label for="enviName" >Build Id:</label>
           <br/>
-          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName">
+          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName" [(ngModel)]="build_id">
         </div>
         
         <div >
             <label for="enviName" >Jenkins Job Number:</label>
             <br/>
-            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName">
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName" [(ngModel)]="jenkins_job_number">
         </div>
           <div >
             <label for="enviName" >Status:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="status">
           </div>
           <div >
             <label for="enviName" >Result:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="result">
           </div>
           <div>
             <label for="enviName" >Environment:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]=" running_environment">
           </div>
           <div >
             <label for="enviName" >Group:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="group" >
           </div>
           <div>
             <label for="enviName" >Date:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="date">
           </div>
           <div>
             <label for="enviName" >Start Time:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="start_time">
           </div>
           <div>
             <label for="enviName" >Run Duration:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="run_duration">
           </div>
           <div>
             <label for="enviName" >Reported To:</label>
             <br/>
-            <select style="margin-left: 85px;" id="enviName" class="select-css" name="searchBy">
+            <select style="margin-left: 85px;" id="enviName" class="select-css" name="searchBy"  [(ngModel)]="reporters_ids">
                 <option value=""></option>
             </select>
           </div>
           <div>
             <label for="enviName" >Zoho Issue Link:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName">
+            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="zoho_issue_link" >
           </div>
         </div>
 

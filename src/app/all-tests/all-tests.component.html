@@ -23,13 +23,13 @@
   <br>
   <div class="lbl">
   <label>Search Test by:</label>
-  <select style="margin-left: 85px;" class="select-css" name="searchBy">
-    <option value="case">Test Case</option>
-    <option value="title">Test Title</option>
+  <select style="margin-left: 85px;" class="select-css" name="searchBy" id="field">
+    <option value="test_case">Test Case</option>
+    <option value="test_title">Test Title</option>
     <option value="category">Category</option>
-    <option value="summary">Test Summary</option>
-    <option value="id">Test ID</option>
-    <option value="successRates">Success Rates</option>
+    <option value="test_summary">Test Summary</option>
+    <option value="test_id">Test ID</option>
+    <option value="test_rates">Success Rates</option>
   </select>
   <div id="excelFile">
     <label style="margin-left:140px;">Upload excel tests file:</label>
@@ -41,7 +41,7 @@
   <div style="float:left; padding-left:405px;">
   <input id="txt" style="width: 150px;border:1px; margin-left:-10px;" type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
-<button class="btt" id="txt" style=" width: 30px; margin-left:20px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+<button class="btt" id="txt" style=" width: 30px; margin-left:20px;" type="submit" (click)="searchTestby()" ><i class="fa fa-search"></i></button>
 <input  class="btt" id="txt" style="width: 80px; margin-left:475px;" type="text" routerLink="/addTest" value="Add Test">
 </div>
   <br>

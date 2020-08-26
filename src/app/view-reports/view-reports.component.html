@@ -24,7 +24,7 @@
   <br>
   <div class="lbl">
   <label>Search Report by:</label>
-  <select style="margin-left: 50px;" class="select-css" name="searchBy">
+  <select style="margin-left: 50px;" class="select-css" name="searchBy"  id="field">
       <option value="buildId">Build ID</option>
       <option value="date">Date</option>
   </select>
@@ -34,13 +34,13 @@
   <div style="float:left; padding-left:485px;">
   <input id="txt" style="width: 150px; margin-left: 160px;" type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
-<button id="txt" style="width: 30px; margin-right: 480px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
+<button id="txt" style="width: 30px; margin-right: 480px;" type="submit" (click)="searchReportedby()" ><i class="fa fa-search"></i></button>
 </div>
   <br>
 </div>
 <div>
   <br>
-  <table  >
+  <table id="ReportsTable" >
       <thead >
       <tr >
           <th>Build ID</th>
@@ -49,13 +49,13 @@
           <th>Report Kind</th>
 
       </tr>
-      <tr id="row1" routerLink="/reports">
-          <td></td>
+      <tr *ngFor='let report of displayList' [routerLink]="['/reports', report['report_id']]" (click)="getIdInRow()">
+      <td id="report_id_txt"></td>
           <td></td>
           <td></td>
           <td></td>
       </tr>
-      <tr id="row2" routerLink="/reports">
+      <!-- <tr id="row2" routerLink="/reports">
         <td></td>
         <td></td>
         <td></td>
@@ -108,7 +108,7 @@
   <td></td>
   <td></td>
   <td></td>
-</tr>
+</tr> -->
       </thead>
   </table>
 </div>

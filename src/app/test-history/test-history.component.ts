@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-test-history',
   templateUrl: './test-history.component.html',
@@ -11,10 +12,11 @@ export class TestHistoryComponent implements OnInit {
     testTitle: string;
     SuccessRates: string;
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:5000/test'+ this.testId).toPromise().then(s=>console.log(s));
+    this.route.params.subscribe(t => {let test_id= t.idTestHis;
+      this.http.get('http://localhost:5000/test_history'+ test_id).toPromise().then(s=>console.log(s));})
   
   }
  

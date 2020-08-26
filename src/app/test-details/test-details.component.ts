@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {updateTest , deleteTest } from '../node/index'
-import { ActionSequence } from 'protractor';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-test-details',
@@ -21,15 +21,17 @@ export class TestDetailsComponent implements OnInit {
   expectedResult: string;
   notes: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route:ActivatedRoute) { }
 
   ngOnInit(): void { 
-    let test_id = this. testID;
-    this.http.get('http://localhost:5000/test'+ test_id).toPromise()
+    this.route.params.subscribe(t => {let test_id = t.idTest;
+    this.http.get('http://localhost:5000/test'+  test_id).toPromise().then(s=>console.log(s));})
+    // let test_id = this. testID;
+    // this.http.get('http://localhost:5000/test'+ test_id).toPromise()
   }
 
   editTest(){ 
-    this.http.put('http://localhost:5000/test/test_id',{
+    this.http.put('http://localhost:5000/test',{
       category: this.category,
       group: this.group,
       test_case: this.testCase,
@@ -42,6 +44,6 @@ export class TestDetailsComponent implements OnInit {
       notes: this.notes}).toPromise().then(s=>console.log(s));
   }
   deleteTest(){
-    this.http.delete('http://localhost:5000/test/test_id '+ this. testID).toPromise().then(s=>console.log(s));
+    this.http.delete('http://localhost:5000/test '+ this. testID).toPromise().then(s=>console.log(s));
   }
 }

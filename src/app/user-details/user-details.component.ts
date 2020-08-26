@@ -28,7 +28,7 @@ export class UserDetailsComponent implements OnInit {
 
   editUser(){ 
 
-    this.http.put('http://localhost:5000/user/user_id',{
+    this.http.put('http://localhost:5000/user',{
       user_id: this.userId,
       first_name: this.firstName,
       last_name: this.lastName,

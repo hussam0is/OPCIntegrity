@@ -31,9 +31,9 @@ export class AllTestsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  searchBuildby(){
+  searchTestby(){
     var field = $("#field").val();
-    var term = $("#txt1").val();
+    var term = $("#txt").val();
     this.http.get('http://localhost:5000//test?field='+ field + '&search_text=' + term).toPromise()
     .then(res =>  {this.list = res; console.log(this.list); console.log(Object.keys(this.list).length); this.list_len = Object.keys(this.list).length;
     var table = document.getElementById("allTestTable");
@@ -59,7 +59,7 @@ export class AllTestsComponent implements OnInit {
     //add first chunk to table
     for (var i = 0; i < this.list_len && i < 10; i++) {
       var d = table.getElementsByTagName("tr")[i+1];
-      for (var j = 0; j < 6; j++){
+      for (var j = 0; j < 8; j++){
         d.getElementsByTagName("td")[j].innerHTML = this.list[i][(table_titles[j])]; 
      }
     }

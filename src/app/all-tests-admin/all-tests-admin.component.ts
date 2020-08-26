@@ -22,6 +22,7 @@ export class AllTestsAdminComponent implements OnInit {
     list_len: number;
     search_list: object;
     chunk_id: number;
+    displayList: Array<any>=[{},{},{},{},{},{},{},{},{},{}]
 
 
   
@@ -30,14 +31,14 @@ export class AllTestsAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  searchBuildby(){
+  searchTestby(){
+    this.displayList=[]
     var field = $("#field").val();
-    var term = $("#txt1").val();
+    var term = $("#txt").val();
     this.http.get('http://localhost:5000//test?field='+ field + '&search_text=' + term).toPromise()
-    .then(res =>  {this.list = res; console.log(this.list); console.log(Object.keys(this.list).length); this.list_len = Object.keys(this.list).length;
+    .then(res =>  {this.list = res;  this.list_len = Object.keys(this.list).length;
     var table = document.getElementById("allTestTable");
     var table_titles = ["test_id", "test_case", "test_title", "category", "test_summary", "test_rates","group","notes"];
-    
     //split to chunks of 10
     var values = Object.values(this.list);
     var counter = 0;
@@ -56,13 +57,16 @@ export class AllTestsAdminComponent implements OnInit {
     this.chunk_id = 0;
 
     //add first chunk to table
-    for (var i = 0; i < this.list_len && i < 10; i++) {
-      var d = table.getElementsByTagName("tr")[i+1];
-      for (var j = 0; j < 6; j++){
-        d.getElementsByTagName("td")[j].innerHTML = this.list[i][(table_titles[j])]; 
-     }
+    for (var i = 0;  i < 10; i++){
+      this.displayList.push(final[0][i]);
     }
+    console.log(this.displayList)
+
   });
   }
+  getIdInRow(){  
+
+  }
+     
 
 }

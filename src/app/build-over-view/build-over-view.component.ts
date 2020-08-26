@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./build-over-view.component.scss']
 })
 export class BuildOverViewComponent implements OnInit {
+  
 
   constructor() { }
 
