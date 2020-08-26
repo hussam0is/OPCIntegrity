@@ -15,7 +15,7 @@ body {
 form {
   background:rgb(13, 76, 127);
   width:850px;
-  height: 650px;
+  height: 750px;
   margin: auto;
   border-radius:0.4em;
   border:1px solid #191919;
@@ -125,7 +125,7 @@ font-weight:normal;
   padding-right: 110px;
   //padding-bottom: 50px;
   }
-  #txt{
+  #txt, #txt1{
     font-size: 15px;
     font-family:  Arial, sans-serif;
     width:100%;
@@ -197,6 +197,24 @@ background-size: .65em auto, 100%;}
   text-align: left;
   font-size: 15px;
   font-family:  Arial, sans-serif;
+}
+#select{
+  font-family:  Arial, sans-serif;
+  float:right;
+  resize: none;
+  position: auto;
+  margin-top: -49px;
+  padding:5px 5px;
+  font-weight: bold;
+}
+#title{
+  font-family:  Arial, sans-serif;
+  float:right;
+  resize: none;
+  position: auto;
+  margin-top: -49px;
+  padding:5px 5px;
+  font-weight: bold;
 }
 #Report{
   //text-align: left;

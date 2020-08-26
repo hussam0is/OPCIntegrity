@@ -19,33 +19,31 @@
         <div>
           <label for="ReportTitle" >Kind of Report:</label>
           <br/>
-          <select id="Report" class="select-css" name="searchBy"  [(ngModel)]="reportKind">
-              <option value="Build Run Summary"></option>
-              <option value="Integrity Status"></option>
+          <select id="select" class="select-css" name="searchBy"  (change)="fillReportData()">
+              <option id="kind_name">Choose Kind</option>
           </select>
         </div>
             <div>
               <label for="ReportTitle" >Report Title:</label>
               <br/>
-      
-              <input type="ReportTitle" name="ReportTitle" id="Report"  [(ngModel)]="ReportTitle">
+              <input id="title" type="ReportTitle" name="ReportTitle">
             </div>
 
               <div>
                 <br/>
                 <label for="ReportTitle" styile="display: inline-block;" >Default Reporters:</label>
-                <label style="padding-left: 105px;">Search Build by:</label>
-                  <select id="SearchUserby"  [(ngModel)]="DefaultReporters"   >
-                    <option value="FirstName">First Name</option>
-                    <option value="LastName">Last Name</option>
-                    <option value="UserId">User ID</option>
-                    <option value="UserType">User Type</option>
+                <label style="padding-left: 105px;">Search User by:</label>
+                  <select id="SearchUserby">
+                    <option value="first_name">First Name</option>
+                    <option value="last_name">Last Name</option>
+                    <option value="user_id">User ID</option>
+                    <option value="user_type">User Type</option>
                   </select>
                 <div class="row">
                   <br>
                   <div>
-                    <button id="txt" style="padding: 5px 8px 5px 8px; width: 30px; margin-left: 25px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
-                    <input id="txt" style="width: 207px; border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+                    <button id="txt" style="padding: 5px 8px 5px 8px; width: 30px; margin-left: 25px;" type="submit" (click)="searchUserby()" ><i class="fa fa-search"></i></button>
+                    <input id="txt1" style="width: 207px; border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
                 </div>
             </div>
           </div>
@@ -61,21 +59,17 @@
         </div>
               <div>
           <select id="users" size="All" multiple>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
           </select>
         </div>
         <div class="days">
           <label class="timer">Send Report Every:</label>
-          <input type="ReportTimer" name="ReportTimer" id="ReportTimer" [(ngModel)]="ReportTimer">
+          <input id="days" type="ReportTimer" name="ReportTimer" >
         </div>
         <label id="timer1" >Days</label>
         <br/>
         <br/>
         <div style="text-align:center; float:right;padding-right: 280px;">
-          <input id="txt" type="text" value="Save Report Kind" (click)="saveReport()" style="text-align:center;">
+          <input id="txt" type="text" value="Save Report Kind" style="text-align:center;" (click)="saveReportKind()">
         </div>
         </form>
      </div>
