@@ -20,12 +20,45 @@ export class ManageUsersComponent implements OnInit {
   list_len: number;
   search_list: object;
   chunk_id: number;
-  displayList: Array<any>=[{},{},{},{},{},{},{},{},{},{}]
+  displayList: Array<any>=[];
+  envList: object;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.displayList=[];
+    this.http.get('http://localhost:5000/user').toPromise().then(rs =>  {this.list = rs; this.list_len = Object.keys(this.list).length;
+    console.log(rs);
+    var table = document.getElementById("usersTable");
+    var table_titles = ["user_id", "first_name", "last_name", "email_address", "password", "user_type"];
+   
+    for (var i = 0;  i < this.list_len; i++){
+      this.displayList.push(this.list[i]);
+    }
   }
+)
+  this.http.get('http://localhost:5000/environment').toPromise().then(s=> {
+    this.envList = s;
+    console.log("envlist:" + this.envList);
+  for(var i=0; i<Object.keys(s).length; i++){
+    console.log("s[i]:" + s[i]);
+    var select = document.getElementById("select");
+
+    var option = document.createElement('option');
+    option.text = option.value = s[i];
+    select.appendChild(option);
+    // document.getElementById('select').options.add(option);
+
+    (<HTMLInputElement>document.getElementById("env_name")).value  = s[i];
+  }
+  // (<HTMLInputElement>document.getElementById("us_id")).value  = s['user_id'];
+  // (<HTMLInputElement>document.getElementById("firstName")).value  = s['first_name'];
+  // (<HTMLInputElement>document.getElementById("lastName")).value  = s['last_name'];
+  // (<HTMLInputElement>document.getElementById("email")).value  = s['email_address'];
+  // (<HTMLInputElement>document.getElementById("password")).value  = s['password'];
+  // (<HTMLInputElement>document.getElementById("userType")).value  = s['user_type'];
+  });}
+
   searchUserby(){
     this.displayList=[]
     var field = $("#field").val();
@@ -35,67 +68,9 @@ export class ManageUsersComponent implements OnInit {
     var table = document.getElementById("usersTable");
     var table_titles = ["user_id", "first_name", "last_name", "email_address", "password", "user_type"];
     
-    //split to chunks of 10
-    var values = Object.values(this.list);
-    var counter = 0;
-    var portion = {};
-    var final = [];
-    for (var key in this.list) {
-      if (counter !== 0 && counter % 10 === 0) {
-        final.push(portion);
-        portion = {};
-      }
-      portion[key] = values[counter];
-      counter++;
+    for (var i = 0;  i < this.list_len; i++){
+      this.displayList.push(this.list[i]);
     }
-    final.push(portion);
-    this.search_list = final;
-    this.chunk_id = 0;
-
-    //reset table data
-    // for (var i = 0; i < 10; i++) {
-    //   var d = table.getElementsByTagName("tr")[i+1];
-    //   for (var j = 0; j < 6; j++){
-    //     d.getElementsByTagName("td")[j].innerHTML = null; 
-    //  }
-    // }
-
-    //add first chunk to table
-    // for (var i = 0; i < this.list_len && i < 10; i++) {
-    //   var d = table.getElementsByTagName("tr")[i+1];
-    //   for (var j = 0; j < 6; j++){
-    //     d.getElementsByTagName("td")[j].innerHTML = this.list[i][(table_titles[j])]; 
-    //  }
-    // }
-
-    // this.displayList.push(this.list[i]);
-    for (var i = 0;  i < 10; i++){
-      this.displayList.push(final[0][i]);
-    }
-    console.log(this.displayList)
-
   });
-  }
-
-
-  getIdInRow(){  
-    // var field0 = $("#usersTable").find('tr').click();
-    // console.log(field0);
-
-    // var user_id = document.getElementById('user_id_txt').innerHTML;
-    // console.log("ui:" + user_id);
-  }
-
-  nextChunk(){
-    // var table = document.getElementById("usersTable");
-    // var table_titles = ["user_id", "first_name", "last_name", "email_address", "password", "user_type"];
-    // var chunk = this.chunk_id++;
-    // //add next chunk to table
-    // for (var i = 0; i < this.list_len && i < 10; i++) {
-    //   var d = table.getElementsByTagName("tr")[i+1];
-    //   for (var j = 0; j < 6; j++){
-    //      d.getElementsByTagName("td")[j].innerHTML = this.list[i][(table_titles[j])]; 
-    //   }
-    // }
   }
 }

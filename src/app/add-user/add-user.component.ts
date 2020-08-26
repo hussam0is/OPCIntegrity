@@ -21,12 +21,12 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
   addUser(){
-      this.http.post('http://localhost:5000/user',{
-      user_id: this.userId,
-      first_name: this.firstName,
-      last_name: this.lastName,
-      email_address: this.email,
-      password: this.password,
-      user_type:  this.userType}).toPromise().then(s=>console.log(s));
+        this.http.post('http://localhost:5000/user',{
+          first_name:   (<HTMLInputElement>document.getElementById("firstName")).value,
+          last_name:  (<HTMLInputElement>document.getElementById("lastName")).value,
+          email_address:  (<HTMLInputElement>document.getElementById("email")).value,
+          password:  (<HTMLInputElement>document.getElementById("password")).value,
+          user_type:  (<HTMLInputElement>document.getElementById("userType")).value}).toPromise()
+          .then(s =>  console.log(s));
   }
 }
