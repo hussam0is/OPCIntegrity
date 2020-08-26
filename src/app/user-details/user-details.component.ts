@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {deleteUser , updateUser } from '../node/index'
 import { ActivatedRoute } from '@angular/router';
+import * as $ from 'jquery/dist/jquery.min.js';
+
 
 @Component({
   selector: 'app-user-details',
@@ -19,26 +21,30 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(t => {let user_id = t.id;
-    this.http.get('http://localhost:5000/user/'+ user_id).toPromise().then(s=>console.log(s));})
-    // let user_id = this.userId;
-    // this.http.get('http://localhost:5000/user/'+ user_id).toPromise().then(s=>console.log(s));
+    this.http.get('http://localhost:5000/user/'+ user_id).toPromise().then(s=> {
+    (<HTMLInputElement>document.getElementById("us_id")).value  = s['user_id'];
+    (<HTMLInputElement>document.getElementById("firstName")).value  = s['first_name'];
+    (<HTMLInputElement>document.getElementById("lastName")).value  = s['last_name'];
+    (<HTMLInputElement>document.getElementById("email")).value  = s['email_address'];
+    (<HTMLInputElement>document.getElementById("password")).value  = s['password'];
+    (<HTMLInputElement>document.getElementById("userType")).value  = s['user_type'];
+    });})
   }
-
 
 
   editUser(){ 
-
-    this.http.put('http://localhost:5000/user',{
-      user_id: this.userId,
-      first_name: this.firstName,
-      last_name: this.lastName,
-      email_address: this.email,
-      password: this.password,
-      user_type:  this.userType}).toPromise().then(s=>console.log(s));
+    let user_id = (<HTMLInputElement>document.getElementById("us_id")).value;
+    this.http.put('http://localhost:5000/user/' + user_id ,{
+      first_name:   (<HTMLInputElement>document.getElementById("firstName")).value,
+      last_name:  (<HTMLInputElement>document.getElementById("lastName")).value,
+      email_address:  (<HTMLInputElement>document.getElementById("email")).value,
+      password:  (<HTMLInputElement>document.getElementById("password")).value,
+      user_type:  (<HTMLInputElement>document.getElementById("userType")).value}).toPromise()
+      .then(s =>  console.log(s));
   }
+
   deleteUser(){
-    let user_id = this.userId;
-    this.http.delete('http://localhost:5000//user'+ user_id).toPromise().then(s=>console.log(s));
+    let user_id = (<HTMLInputElement>document.getElementById("us_id")).value;
+    this.http.delete('http://localhost:5000//user/'+ user_id).toPromise().then(s=>console.log(s));
   }
-
 }

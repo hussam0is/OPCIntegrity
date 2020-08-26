@@ -22,28 +22,29 @@
             <br/>
             <label for="enviName" >Test Id:</label>
           <br/>
-          <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName"  [(ngModel)]="testID">
+          <input  id="test_id" style="margin-bottom: 0px;" type="enviName" name="enviName"  value=""  >
         </div>
 
         <div >
             <label for="enviName" >Category:</label>
             <br/>
-            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="enviName"  [(ngModel)]="category">
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="category"  >
         </div>
           <div >
             <label for="enviName" >Group:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="group">
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="group" >
           </div>
           <div >
             <label for="enviName" >Test Case:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName"  [(ngModel)]="testCase">
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="testCase" >
+ 
           </div>
           <div>
             <label for="enviName" >Test Title:</label>
             <br/>
-            <input type="enviName" name="enviName" id="enviName" [(ngModel)]="testTitle">
+            <input style="margin-bottom: 0px;" type="enviName" name="enviName" id="testTitle" >
           </div>
           <div>
             <label for="enviName" >Symbol:</label>
@@ -53,31 +54,31 @@
           <div>
             <label for="enviName" >Test Summary:</label>
           <br/>
-          <textarea style="margin-top: -35px;" for="enviName" name="TestSummary" rows="4" cols="30"  [(ngModel)]="testSummary"></textarea>
+          <textarea style="margin-top: -35px;" for="enviName" name="TestSummary" rows="4" cols="30"  id="testSummary"></textarea>
         </div>
         <div>
           <br/>
           <label for="enviName" >Test Steps:</label>
         <br/>
-        <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="testSteps"></textarea>
+        <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" id="testSteps"></textarea>
       </div>
       <div>
         <br/>
         <label for="enviName" >Test Data:</label>
       <br/>
-      <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="testData"></textarea>
+      <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30"id="testData"></textarea>
     </div>
     <div>
       <br/>
       <label for="enviName" >Expected Result:</label>
     <br/>
-    <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="expectedResult"></textarea>
+    <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" id="expectedResult"></textarea>
   </div>
   <div>
     <br/>
     <label for="enviName" >Notes:</label>
   <br/>
-  <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" [(ngModel)]="notes"></textarea>
+  <textarea style="margin-top: -50px;" for="enviName" name="TestSummary" rows="4" cols="30" id="notes"></textarea>
 </div>
           <div class="addBtn">
             <input style="width: 190px;" type="submit" name="go"  routerLink="/testHistory" value="See Test History" >

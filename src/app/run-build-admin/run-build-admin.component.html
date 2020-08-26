@@ -26,21 +26,19 @@
   <br>
   <div class="lbl">
   <label>Choose group number:</label>
-  <select style="margin-left: 60px;" class="select-css" name="environment" > 
-      <option value="1"></option>
-      <option value="2"></option>
-      <option value="3"></option>
-      <option value="4"></option>
-      <option value="5"></option>
+  <select id="select" style="margin-left: 50px;" class="select-css" name="environment">
+    <option id="group_num">Select Number.</option>
   </select>
 </div>
 <br/>
 <div class="lbl">
   <label>Search by build number:</label>
   <select style="margin-left: 50px;" class="select-css" name="environment" id="filed">
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
   </select>
   <br/>
   <br/>
@@ -50,9 +48,12 @@
   <div class="lbl">
   <label>Search Test by:</label>
   <select style="margin-left: 115px;" class="select-css" name="searchBy" id="filed">
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
+      <option value="test_id">Test ID</option>
+      <option value="test_case">Test Case</option>
+      <option value="test_title">Test Title</option>
+      <option value="category">Category</option>
+      <option value="test_sumary">Test Summary</option>
+      <option value="group">Group</option>
   </select>
 </div>
   <br>
@@ -75,15 +76,24 @@
   <table  id= "runBuildTable" >
       <thead >
       <tr >
-
         <th>Test ID</th>
-        <th>Test Title</th>
         <th>Test Case</th>
+        <th>Test Title</th>
         <th>Category</th>
         <th>Test Summary</th>
         <th>Group</th>
       </tr>
-      <tr id="row1">
+      <tr *ngFor='let test of displayList' >
+        <td id="test_id_txt">{{test['test_id']}}</td>
+        <td>{{test['test_id']}}</td>
+        <td>{{test['test_case']}}</td>
+        <td>{{test['test_title']}}</td>
+        <td>{{test['category']}}</td>
+        <td>{{test['test_summary']}}</td>
+        <td>{{test['group']}}</td>
+      </tr>
+
+      <!-- <tr id="row1">
           <td></td>
           <td></td>
           <td></td>
@@ -91,8 +101,8 @@
           <td></td>
           <td></td>
 
-      </tr>
-      <tr id="row2" >
+      </tr> -->
+      <!-- <tr id="row2" >
         <td></td>
         <td></td>
         <td></td>
@@ -172,23 +182,10 @@
   <td></td>
   <td></td>
 
-</tr>
+</tr> -->
       </thead>
   </table>
 </div>
 <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> clicking on a test will select it. Another click will make it unselected.</p>
-
-<div>
-
-  <a href="#">
-    <span class="left"></span>
-  </a>
-  <a> <p class="page">Page 1</p></a>
-    <a  href="#">
-      <span class="right"></span>
-    </a>
-
-
-</div>
 </body>
 

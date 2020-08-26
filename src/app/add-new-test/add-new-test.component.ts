@@ -23,6 +23,20 @@ export class AddNewTestComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  addUser(){
+    this.http.post('http://localhost:5000/test',{
+      category:   (<HTMLInputElement>document.getElementById("category")).value,
+      group:  (<HTMLInputElement>document.getElementById("group")).value,
+      test_case:  (<HTMLInputElement>document.getElementById("testCase")).value,
+      test_title:  (<HTMLInputElement>document.getElementById("testTitle")).value,
+      symbol:  (<HTMLInputElement>document.getElementById("symbol")).value,
+      test_summary:  (<HTMLInputElement>document.getElementById("testSummary")).value,
+      test_steps:  (<HTMLInputElement>document.getElementById("testSteps")).value,
+      test_data:  (<HTMLInputElement>document.getElementById("testData")).value,
+      expected_result:  (<HTMLInputElement>document.getElementById("expectedResult")).value,
+      notes:  (<HTMLInputElement>document.getElementById("notes")).value,}).toPromise()
+      .then(s =>  console.log(s));
+}
 
   addTest(){
     this.http.post('http://localhost:5000/test',{

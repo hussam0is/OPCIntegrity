@@ -27,10 +27,8 @@
   <br>
   <div class="lbl">
   <label>Current Environment:</label>
-  <select style="margin-left: 50px;" class="select-css" name="environment">
-      <option value="trunk"></option>
-      <option value="client"></option>
-      <option value="trail"></option>
+  <select id="select" style="margin-left: 50px;" class="select-css" name="environment">
+      <option id="env_name">Select Env.</option>
   </select>
 </div>
   <br>
@@ -68,14 +66,13 @@
           <th>Password</th>
           <th>User Type</th>
       </tr>
-      <tr *ngFor='let user of displayList' [routerLink]="['/userDetails', user['user_id']]" (click)="getIdInRow()">
-        <!-- <tr 'let user of displayList' [routerLink]="['/userDetails', user['user_id']]" (click)="getIdInRow()"> -->
-        <td id="user_id_txt"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor='let user of displayList' [routerLink]="['/userDetails', user['user_id']]">
+        <td id="user_id_txt">{{user['user_id']}}</td>
+        <td>{{user['first_name']}}</td>
+        <td>{{user['last_name']}}</td>
+        <td>{{user['email_address']}}</td>
+        <td>{{user['password']}}</td>
+        <td>{{user['user_type']}}</td>
 
       </tr>
       <!-- <tr id="row2" routerLink="/userDetails" (click)="getIdInRow()">
@@ -163,17 +160,4 @@
   </table>
 </div>
 <p class="note"><strong style="color:rgb(133, 195, 247)">Notice:</strong> Double-clicking on a user row will open user details</p>
-
-<div>
-
-  <a href="#">
-    <span class="left"  (click)="nextChunk()"></span>
-  </a>
-  <a> <p class="page">Page 1</p></a>
-    <a  href="#">
-      <span class="right"></span>
-    </a>
-
-
-</div>
 </body>

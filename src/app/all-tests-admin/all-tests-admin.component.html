@@ -63,27 +63,29 @@
         <th >Group</th>
         <th >Notes</th>
       </tr>
-      <tr *ngFor='let test of displayList' [routerLink]="['/testDetails', test['test_id']]" (click)="getIdInRow()">
-      <td id="test_id_txt"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      </tr>
-      <!-- <tr id="row2" routerLink="/testDetails">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor='let test of displayList' [routerLink]="['/testDetails',test['test_id']]">
+      <td id="test_id_txt">{{test['test_id']}}</td>
+      <td>{{test['test_id']}}</td>
+      <td>{{test['test_case']}}</td>
+      <td>{{test['test_title']}}</td>
+      <td>{{test['category']}}</td>
+      <td>{{test['test_summary']}}</td>
+      <td>{{test['test_rate']}}</td>
+      <td>{{test['group']}}</td>
+      <td>{{test['notes']}}</td>
     </tr>
-    <tr id="row3" routerLink="/testDetails">
+
+       <!-- <tr id="row2" routerLink="/testDetails">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr> -->
+    <!-- <tr id="row3" routerLink="/testDetails">
       <td></td>
       <td></td>
       <td></td>
@@ -162,7 +164,7 @@
   <td></td>
   <td></td>
   <td></td>
-</tr> -->
+</tr> --> 
       </thead>
   </table>
 </div>
@@ -171,17 +173,4 @@
 
 <br/>
 <br/>
-
-<div style="padding-right:30px; ">
-<br/>
-  <a href="#">
-    <span class="left"></span>
-  </a>
-  <a> <p class="page">Page 1</p></a>
-    <a  href="#">
-      <span class="right"></span>
-    </a>
-
-
-</div>
 </body>
