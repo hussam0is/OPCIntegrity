@@ -33,12 +33,8 @@
 <br/>
 <div class="lbl">
   <label>Search by build number:</label>
-  <select style="margin-left: 50px;" class="select-css" name="environment" id="filed">
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
+  <select style="margin-left: 50px;" class="select-css" name="environment" id="order_by">
+      <option value="build_id">build number</option>
   </select>
   <br/>
   <br/>
@@ -59,7 +55,7 @@
   <br>
 <div class="row">
   <div style="float:left; padding-left:505px;">
-  <input id="txt" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
+  <input id="txt1" style="width: 150px;border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
 </div>
 <button id="txt" style="width: 30px; margin-right: 625px; margin-top:-3px;" type="submit" (click)="searchTestby()" ><i class="fa fa-search"></i></button>
 </div>
@@ -83,9 +79,9 @@
         <th>Test Summary</th>
         <th>Group</th>
       </tr>
-      <tr *ngFor='let test of displayList' >
+      <!-- <tr *ngFor='let test of displayList' (click)="addthisRow()" [routerLink]="['/buildOverView', test['test_id']]"> -->
+      <tr *ngFor='let test of displayList'  [routerLink]="['/buildOverView', test['test_id']]">
         <td id="test_id_txt">{{test['test_id']}}</td>
-        <td>{{test['test_id']}}</td>
         <td>{{test['test_case']}}</td>
         <td>{{test['test_title']}}</td>
         <td>{{test['category']}}</td>
@@ -93,96 +89,6 @@
         <td>{{test['group']}}</td>
       </tr>
 
-      <!-- <tr id="row1">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-
-      </tr> -->
-      <!-- <tr id="row2" >
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-
-    </tr>
-    <tr id="row3" >
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-  </tr>
-  <tr id="row4" >
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-</tr>
-<tr id="row5" >
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row6" >
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row7" >
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row8" >
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row9" >
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr>
-<tr id="row10" >
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-
-</tr> -->
       </thead>
   </table>
 </div>
