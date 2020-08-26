@@ -9,9 +9,11 @@ const fetch = require('node-fetch');
 const log = console.log
 
 async function main() {
+    console.log("aaaaaaaaaaaaaaaaaa")
     const app = express()
 
     const PORT = process.env.PORT || 5000
+   
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
     // app.use(sendToDB);

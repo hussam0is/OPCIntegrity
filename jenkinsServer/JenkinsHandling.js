@@ -1,6 +1,5 @@
 const jenkinsAPI = require('jenkins-api');
 const username = 'admin';
-const password = '************';
 const token = '11198feb1a0d516c53113b7b5966db23a4'
 
 function connectJenkinsUser(username, token) {
@@ -16,6 +15,18 @@ exports.jenkinsUser2 = jenkinsUser2
 exports.jenkinsUser1 = jenkinsUser1
 //console.log(jenkinsUser1)
 //console.log(jenkinsUser2) // all functions in the api
+
+
+exports.lastBuild = async function(jobName){
+    return new Promise(resolve => {
+        jenkinsUser1.job.get(jobName, function (err, data) {
+            if (err) {
+                return console.log(err);
+            }
+            resolve(data["lastBuild"]["numbernumber"])
+        })
+    })
+}
 
 exports.get_builds_and_tests = function (jobName) {
     return new Promise((resolve, reject) => {
@@ -72,7 +83,8 @@ exports.getConsoleOutput = function (jobName, buildNumber) {
         console.log("error getting data from build.log at jenkins_handling.js")
     })
 }
-exports.getConfigXML = function (jobName) {
+
+const getConfigXML = async function (jobName) {
     return new Promise((resolve, reject) => {
         jenkinsUser2.get_config_xml(jobName, function (err, data) {
             if (err) {
@@ -81,6 +93,56 @@ exports.getConfigXML = function (jobName) {
             resolve(data);
         });
     }).catch(err => console.log(err))
+}
+
+
+exports.update_job_xml = async function (jobName, groupNum) {
+    return new Promise((resolve, reject) => {
+        const group1 = 'group54321'
+        const group2 = 'group5432'
+        const group3 = 'group543'
+        const group4 = 'group54'
+        const group5 = 'group5'
+        var group_to_run;
+        if (groupNum == 1) {
+            group_to_run = group1
+        }
+        if (groupNum == 2) {
+            group_to_run = group2
+        }
+        if (groupNum == 3) {
+            group_to_run = group3
+        }
+        if (groupNum == 4) {
+            group_to_run = group4
+        }
+        if (groupNum == 5) {
+            group_to_run = group5
+        }
+        const config = getConfigXML(jobName)
+
+        jenkinsUser2.update_config(jobName
+            , function (config) {
+                // function which takes the config.xml, and returns
+                // the new config xml for the new job
+                var new_xml = config.replace(
+                    /npm test -- --grep group54321|npm test -- --grep group5432|npm test -- --grep group543|npm test -- --grep group54|npm test -- --grep group5/gi
+                ,'npm test -- --grep ' + group_to_run);
+                new_xml = new_xml.replace(/npm test -- --grep undefined/gi,'npm test -- --grep ' + group_to_run)
+                return new_xml
+            },
+            function (err, data) {
+                // if no error, job was copied
+                if (err) {
+                    reject("Error occured while updating xml for job: " + jobName+'\nError type: '+err)
+                    return console.log(err);
+                }
+                resolve(data)
+            }
+        )
+
+    })
+
 }
 
 exports.test_result = function (jobName, Id) {
@@ -95,7 +157,8 @@ exports.test_result = function (jobName, Id) {
         });
     })
 }
-exports.buildInfo = function (jobName, buildId) {
+
+exports.buildInfo = async function (jobName, buildId) {
     return new Promise((resolve, reject) => {
         jenkinsUser2.build_info(jobName, buildId, function (err, data) {
             if (err) {
@@ -119,6 +182,7 @@ exports.deleteBuild = function (jobName, buildId) {
         })
     }).catch(err => console.log(err))
 }
+
 exports.createJob = async function (jobName) {
     const jobsInJenkins = await get_ALl_jobs()
     const xmlConfigString = '<?xml version=\'1.1\' encoding=\'UTF-8\'?>\n' +
@@ -154,7 +218,6 @@ exports.createJob = async function (jobName) {
         });
     }).catch(err => {
         console.log('Error in function -createJob()- :' + err)
-
     })
 }
 exports.stopBuild = async function (jobName, buildId) {
@@ -168,3 +231,21 @@ exports.stopBuild = async function (jobName, buildId) {
         })
     }).catch(err => console.log(err));
 }
+
+exports.run_build = async function (jobName) {
+    return new Promise((resolve, reject) => {
+        jenkinsUser2.build(jobName, function (err, data) {
+            if (err) {
+                console.log("Error running job: ", jobName)
+                return console.log(err);
+            }
+            console.log('building job: '+jobName+'..')
+            console.log(data)
+            resolve(data)
+            
+        })
+    })
+}
+
+
+exports.getConfigXML = getConfigXML
