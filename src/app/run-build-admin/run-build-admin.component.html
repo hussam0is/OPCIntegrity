@@ -80,7 +80,7 @@
         <th>Group</th>
       </tr>
       <!-- <tr *ngFor='let test of displayList' (click)="addthisRow()" [routerLink]="['/buildOverView', test['test_id']]"> -->
-      <tr *ngFor='let test of displayList'  [routerLink]="['/buildOverView', test['test_id']]">
+      <tr *ngFor='let test of displayList' (click)="RowSelected(test)" [routerLink]="['/buildOverView', test['test_id']]" id="selectedRow">
         <td id="test_id_txt">{{test['test_id']}}</td>
         <td>{{test['test_case']}}</td>
         <td>{{test['test_title']}}</td>

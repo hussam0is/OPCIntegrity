@@ -22,6 +22,7 @@ export class RunBuildAdminComponent implements OnInit {
   chunk_id: number;
   displayList: Array<any>=[];
   groupList: object;
+  selectedRow:object;
 
 
   
@@ -74,9 +75,10 @@ export class RunBuildAdminComponent implements OnInit {
   });
   
   }
-  // addthisRow(test_id_txt){
+  RowSelected(u){
 
-  // }
+     
+    }
 
   }
 
