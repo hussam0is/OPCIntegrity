@@ -19,9 +19,9 @@
         <div>
           <label for="ReportTitle" >Running environment:</label>
           <br/>
-          <select id="select" style="margin-left: 50px;" class="select-css" name="environment">
-            <option id="env_name">Select Env.</option>
-        </select>
+          <select id="Report1" class="select-css" name="searchBy">
+              <option value="hello world 2"></option>
+          </select>
         </div>
         <div>
           <label for="ReportTitle" >Group Number:</label>
@@ -32,22 +32,18 @@
             <div>
               <label for="ReportTitle" >Report To:</label>
               <br/>
-              <select style="margin-left: 90px;" class="select-css" name="searchBy" id="field">
-                <option value="user_id">User Id</option>
-                <option value="first_name">First Name</option>
-                <option value="last_name">Last Name</option>
-                <option value="email_address">Email Address</option>
-                <option value="user_type">User Type</option>
+              <select id="Report" class="select-css" name="searchBy">
+                <option value="First Name">First Name</option>
+                <option value="Last Name">Last Name</option>
+                <option value="Email Address">Email Address</option>
+                <option value="User Type">User Type</option>
             </select>
             </div>
               <div>
                 <div class="row">
                   <div>
+                    <button id="txt" style="padding: 5px 8px 5px 8px; width: 30px; margin-left: 25px;" type="submit" onclick="searchBuildby()" ><i class="fa fa-search"></i></button>
                     <input id="txt1" style="width: 207px; border:1px; " type="text" onclick="value ='' "  value="Enter Search Word">
-
-                    <button id="txt" style="padding: 5px 8px 5px 8px; width: 30px; margin-left: 25px;" type="submit" (click)="searchReportTo()" ><i class="fa fa-search"></i></button>
-
-                   
                 </div>
             </div>
           </div>

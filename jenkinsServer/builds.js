@@ -31,9 +31,9 @@ const addItem = (item, list) => {
 builds = addItem(build2, builds)
 builds = builds.slice(1, builds.length)
 
-
 const getBuilds = async () => {
     const jobs = await getJobs()
+    console.log(jobs)
     for (let job in jobs) {
         const builds_ids = await JH.get_builds_and_tests(jobs[job].environment_name)
         for (let build_id in builds_ids) {
